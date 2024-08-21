@@ -14,6 +14,11 @@ export const theme = createTheme({
       defaultProps: {
         variant: "contained"
       }
-    }
+    },
+    MuiLoadingButton: {
+      defaultProps: {
+        variant: "contained"
+      }
+    },
   }
 })
