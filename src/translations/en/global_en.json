@@ -1,0 +1,13 @@
+{
+  "Log in": "Log in",
+  "If you do not have an account, please contact your manager": "If you do not have an account, please contact your manager",
+  "E-mail address": "E-mail address",
+  "Password": "Password",
+  "E-mail address is required": "E-mail address is required",
+  "This is not a valid email address": "This is not a valid email address",
+  "Password is required": "Password is required",
+  "The email address cannot be longer than 255 characters": "The email address cannot be longer than 255 characters",
+  "The password cannot be less than 6 characters long": "The password cannot be less than 6 characters long",
+  "Welcome to": "Welcome to",
+  "Incorrect e-mail address or password": "Incorrect e-mail address or password"
+}

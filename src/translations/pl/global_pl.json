@@ -1,0 +1,13 @@
+{
+  "Log in": "Zaloguj się",
+  "If you do not have an account, please contact your manager": "Jeśli nie posiadasz konta, skontaktuj się ze swoim menadżerem",
+  "E-mail address": "Adres e-mail",
+  "Password": "Hasło",
+  "E-mail address is required": "Adres e-mail jest wymagany",
+  "This is not a valid email address": "To nie jest prawidłowy format adresu e-mail",
+  "Password is required": "Hasło jest wymagane",
+  "The email address cannot be longer than 255 characters": "Adres e-mail nie może mieć więcej niż 255 znaków",
+  "The password cannot be less than 6 characters long": "Hasło nie może mieć mniej niż 6 znaków",
+  "Welcome to": "Witaj w",
+  "Incorrect e-mail address or password": "Podano nieprawidłowy adres e-mail lub hasło"
+}
