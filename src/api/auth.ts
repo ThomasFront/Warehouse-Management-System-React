@@ -6,4 +6,4 @@ type LoginUserResponseType = ApiAxiosResponse<{
   token: string
 }>
 
-export const loginUser = (userData: LoginFormType) => backendApi.post<LoginUserResponseType>("auth/login", userData)
+export const loginUser = (userData: LoginFormType) => backendApi.post<LoginUserResponseType>("auth/login", userData).then(({data}) => data)

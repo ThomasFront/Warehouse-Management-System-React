@@ -9,6 +9,7 @@ import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 import { yupResolver } from '@hookform/resolvers/yup'
 import { SubmitHandler, useForm } from "react-hook-form";
 import ArrowDown from "../../assets/images/arrowDown.png"
+import warehouse from "../../assets/images/warehouse.jpg"
 import { Notation } from "../Notation";
 import { AnimationWrapper } from "../AnimationWrapper";
 import { loginFormSchema } from "../../utils/schema";
@@ -22,7 +23,6 @@ export const LoginForm = () => {
   const { t } = useTranslation()
   const { login, isLoginLoading } = useLogin()
   const [showPassword, setShowPassword] = useState(false)
-  const mainColor = theme.palette.primary.main
   const shadowColor = theme.palette.grey[300]
   const subheadColor = theme.palette.grey[500]
 
@@ -54,6 +54,9 @@ export const LoginForm = () => {
       >
         <Box
           mb={1}
+          sx={{
+            display: { xs: "none", sm: "block" }
+          }}
         >
           <img src={ArrowDown} alt="arrow down" width="60px" />
         </Box>
@@ -101,6 +104,7 @@ export const LoginForm = () => {
                   </InputAdornment>
                 ),
               }}
+              data-testid="emailInput"
             />
             <TextFieldWithControl
               name="password"
@@ -126,6 +130,7 @@ export const LoginForm = () => {
                   </InputAdornment>
                 ),
               }}
+              data-testid="passwordInput"
             />
           </Box>
           <LoadingButton
@@ -136,18 +141,31 @@ export const LoginForm = () => {
           </LoadingButton>
         </Box>
         <Box
+          zIndex={-1}
+          position="relative"
           width="100%"
           justifyContent="center"
           alignItems="center"
           flexDirection="column"
           gap={1}
           sx={{
-            backgroundColor: mainColor,
+            backgroundImage: `url(${warehouse})`,
             display: { xs: "none", sm: "flex" }
           }}
         >
+          <Box
+            sx={{
+              zIndex: -1,
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              backgroundColor: "rgba(247,68,106, 0.9)",
+            }}
+          />
           <Typography color="#FFF" fontWeight={100}>{t("Welcome to")}</Typography>
-          <Notation>
+          <Notation animationDelay={1000}>
             <Typography
               color="#FFF"
               fontWeight={600}

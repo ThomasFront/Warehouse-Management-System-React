@@ -16,7 +16,7 @@ export const ErrorMessage = ({ message }: ErrorMessageProps) => {
           transition={{ duration: 0.2 }}
           exit={{ x: "25px", opacity: 0 }}
         >
-          <FormHelperText>{t(message)}</FormHelperText>
+          <FormHelperText data-testid="formHelperText">{t(message)}</FormHelperText>
         </AnimationWrapper>
       )}
     </AnimatePresence>
