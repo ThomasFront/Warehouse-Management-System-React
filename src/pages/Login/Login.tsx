@@ -1,7 +1,7 @@
 import { Box } from "@mui/material"
 import { LoginForm } from "../../components/LoginForm"
 
-export const LoginPage = () => {
+export const Login = () => {
   return (
     <Box
       display="flex"

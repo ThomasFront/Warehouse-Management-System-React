@@ -9,18 +9,21 @@ import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import { Avatar, Skeleton } from '@mui/material';
+import StarIcon from '@mui/icons-material/Star';
+import { Skeleton, Tooltip } from '@mui/material';
 import { AppBar, DrawerHeader, drawerWidth, Main } from './styledComponents';
 import { useCurrentUser } from '../../hooks/useCurrentUser';
 import { FullScreenLoading } from '../FullScreenLoading';
 import { useMenu } from '../../hooks/useMenu';
 import { MenuItem } from './MenuItem';
 import { LanguageSelector } from '../LanguageSelector';
+import { CustomAvatar } from './CustomAvatar';
 
 export const Navbar = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const { menu, isMenuLoading } = useMenu()
   const { currentUser, isCurrentUserLoading } = useCurrentUser()
+  const isAdmin = currentUser?.role === 'admin'
   const userData = isCurrentUserLoading ? <Skeleton width={175} height={40} /> : <Typography>{currentUser?.firstName} {currentUser?.lastName}</Typography>
 
   const handleDrawerOpen = () => {
@@ -70,8 +73,20 @@ export const Navbar = () => {
             alignItems="center"
             gap={2}
           >
-            {userData}
-            <Avatar />
+            <Box
+              display="flex"
+              justifyContent="center"
+              alignItems="center"
+              gap={0.5}
+            >
+              {isAdmin && (
+                <Tooltip title="Admin">
+                  <StarIcon sx={{ mb: 0.5, color: "#ffd32c" }} />
+                </Tooltip>
+              )}
+              {userData}
+            </Box>
+            <CustomAvatar />
           </Box>
         </Toolbar>
       </AppBar>

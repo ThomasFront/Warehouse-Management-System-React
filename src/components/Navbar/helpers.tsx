@@ -9,6 +9,7 @@ import ForumIcon from '@mui/icons-material/Forum';
 import SupervisedUserCircleIcon from '@mui/icons-material/SupervisedUserCircle';
 import CircleIcon from '@mui/icons-material/Circle';
 import TimelineIcon from '@mui/icons-material/Timeline';
+import StarIcon from '@mui/icons-material/Star';
 
 export const handleMenuItemIcon = (menuItemName: string) => {
   switch (menuItemName) {
@@ -26,7 +27,7 @@ export const handleMenuItemIcon = (menuItemName: string) => {
       return <AccountCircleIcon />
     case "Messages":
       return <ForumIcon />
-    case "User management":
+    case "Users":
       return <SupervisedUserCircleIcon />
     case "Product list":
     case "Category list":
@@ -36,9 +37,15 @@ export const handleMenuItemIcon = (menuItemName: string) => {
     case "Add product":
     case "Add category":
     case "Add message":
-    case "Add user":
     case "Add sale":
       return <AddCircleOutlineIcon />
+    case "Add user":
+      return (
+        <>
+          <AddCircleOutlineIcon />
+          <StarIcon sx={{ mb: 0.5, color: "#ffd32c" }} />
+        </>
+      )
     default:
       return <CircleIcon />
   }

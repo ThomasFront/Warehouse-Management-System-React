@@ -25,8 +25,11 @@
   "Messages": "Wiadomości",
   "Message list": "Lista wiadomości",
   "Add message": "Dodaj wiadomość",
-  "User management": "Zarządzanie użytkownikami",
+  "Users": "Użytkownicy",
   "User list": "Lista użytkowników",
   "Add user": "Dodaj użytkownika",
-  "An error occurred while downloading the menu": "Wystąpił błąd podczas pobierania menu"
+  "An error occurred while downloading the menu": "Wystąpił błąd podczas pobierania menu",
+  "Logout": "Wyloguj",
+  "Settings": "Ustawienia",
+  "Logout failed, please try again": "Wylogowanie nie powiodło się, spróbuj ponownie"
 }

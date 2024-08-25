@@ -25,8 +25,11 @@
   "Messages": "Messages",
   "Message list": "Message list",
   "Add message": "Add message",
-  "User management": "User management",
+  "Users": "Users",
   "User list": "User list",
   "Add user": "Add user",
-  "An error occurred while downloading the menu": "An error occurred while downloading the menu"
+  "An error occurred while downloading the menu": "An error occurred while downloading the menu",
+  "Logout": "Logout",
+  "Settings": "Settings",
+  "Logout failed, please try again": "Logout failed, please try again"
 }
