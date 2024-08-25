@@ -31,5 +31,18 @@
   "An error occurred while downloading the menu": "An error occurred while downloading the menu",
   "Logout": "Logout",
   "Settings": "Settings",
-  "Logout failed, please try again": "Logout failed, please try again"
+  "Logout failed, please try again": "Logout failed, please try again",
+  "The dashboard provides a complete overview of the most important data that allows you to effectively manage and analyze your business": "The dashboard provides a complete overview of the most important data that allows you to effectively manage and analyze your business",
+  "Here you will find a complete list of products that you can easily view, edit and delete": "Here you will find a complete list of products that you can easily view, edit and delete",
+  "On this page you can easily add a new product to your offer. Complete the form to enter product details and save it in the system": "On this page you can easily add a new product to your offer. Complete the form to enter product details and save it in the system",
+  "On this page you can easily add a new category for your products. Complete the form to enter category details and save it in the system": "On this page you can easily add a new category for your products. Complete the form to enter category details and save it in the system",
+  "Here you will find a complete list of categories that you can easily view, edit and delete": "Here you will find a complete list of product categories that you can easily view, edit and delete",
+  "On this page you can view your complete sales history in an easy-to-read table. We also offer the ability to export data, which facilitates further analysis and archiving": "On this page you can view your complete sales history in an easy-to-read table. We also offer the ability to export data, which facilitates further analysis and archiving",
+  "On this page you can enter the details of a new sales transaction. Complete the form to register the sale in the system": "On this page you can enter the details of a new sales transaction. Complete the form to register the sale in the system",
+  "On this page you can customize your profile by changing your profile picture and setting your preferred color theme": "On this page you can customize your profile by changing your profile picture and setting your preferred profile color theme",
+  "On this page you can view all messages sent by other users. The message list allows you to quickly access correspondence and manage communication": "On this page you can view all messages sent by other users. The message list allows you to quickly access correspondence and manage communication",
+  "On this page you can write and send a new message. This also allows you to set the priority of your message, which will help it stand out": "On this page you can write and send a new message. This also allows you to set the priority of your message, which will help it stand out",
+  "On this page you will find a table with the full list of users. You can view basic information about each of them": "On this page you will find a table with the full list of users. You can view basic information about each of them",
+  "On this page, available only to administrators, you can add a new user to the system. Complete the form to enter your new account details": "On this page, available only to administrators, you can add a new user to the system. Complete the form to enter your new account details",
+  "You do not have permission to view this subpage": "You do not have permission to view this subpage"
 }

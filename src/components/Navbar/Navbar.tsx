@@ -22,8 +22,7 @@ import { CustomAvatar } from './CustomAvatar';
 export const Navbar = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const { menu, isMenuLoading } = useMenu()
-  const { currentUser, isCurrentUserLoading } = useCurrentUser()
-  const isAdmin = currentUser?.role === 'admin'
+  const { currentUser, isCurrentUserLoading, isAdmin } = useCurrentUser()
   const userData = isCurrentUserLoading ? <Skeleton width={175} height={40} /> : <Typography>{currentUser?.firstName} {currentUser?.lastName}</Typography>
 
   const handleDrawerOpen = () => {

@@ -13,10 +13,12 @@ export const useCurrentUser = () => {
     queryFn: getCurrentUser,
   })
 
+  const isAdmin = currentUser?.role === "admin"
+
   if (!isCurrentUserLoading && !currentUser) {
     toast.error(t("There was an authentication problem, please log in again"))
     navigate("/")
   }
 
-  return { currentUser, isCurrentUserLoading }
+  return { currentUser, isCurrentUserLoading, isAdmin }
 }

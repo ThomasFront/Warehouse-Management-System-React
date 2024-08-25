@@ -31,5 +31,18 @@
   "An error occurred while downloading the menu": "Wystąpił błąd podczas pobierania menu",
   "Logout": "Wyloguj",
   "Settings": "Ustawienia",
-  "Logout failed, please try again": "Wylogowanie nie powiodło się, spróbuj ponownie"
+  "Logout failed, please try again": "Wylogowanie nie powiodło się, spróbuj ponownie",
+  "The dashboard provides a complete overview of the most important data that allows you to effectively manage and analyze your business": "Panel zapewnia pełny przegląd najważniejszych danych, które pozwolą efektywnie zarządzać i analizować swój biznes",
+  "Here you will find a complete list of products that you can easily view, edit and delete": "Znajdziesz tutaj pełną listę produktów, którą możesz łatwo przeglądać, edytować i usuwać",
+  "On this page you can easily add a new product to your offer. Complete the form to enter product details and save it in the system": "Możesz łatwo dodać nowy produkt do swojej oferty. Wypełnij formularz, aby wprowadzić szczegóły produktu i zapisać go w systemie",
+  "On this page you can easily add a new category for your products. Complete the form to enter category details and save it in the system": "Możesz łatwo dodać nową kategorię produktów. Wypełnij formularz, aby wprowadzić szczegóły kategorii i zapisać ją w systemie",
+  "Here you will find a complete list of categories that you can easily view, edit and delete": "Znajdziesz tutaj pełną listę kategorii produktów, którą możesz łatwo przeglądać, edytować i usuwać",
+  "On this page you can view your complete sales history in an easy-to-read table. We also offer the ability to export data, which facilitates further analysis and archiving": "Na tej stronie możesz przeglądać pełną historię sprzedaży w czytelnej tabeli. Oferujemy również możliwość eksportu danych, co ułatwia ich dalszą analizę i archiwizację",
+  "On this page you can enter the details of a new sales transaction. Complete the form to register the sale in the system": "Na tej stronie możesz wprowadzić szczegóły nowej transakcji sprzedaży. Uzupełnij formularz, aby zarejestrować sprzedaż w systemie",
+  "On this page you can customize your profile by changing your profile picture and setting your preferred color theme": "Na tej stronie możesz dostosować swój profil, zmieniając zdjęcie profilowe oraz ustawiając preferowany motyw kolorystyczny profilu",
+  "On this page you can view all messages sent by other users. The message list allows you to quickly access correspondence and manage communication": "Na tej stronie możesz przeglądać wszystkie wiadomości wysłane przez innych użytkowników. Lista wiadomości umożliwia szybki dostęp do korespondencji i zarządzania komunikacją",
+  "On this page you can write and send a new message. This also allows you to set the priority of your message, which will help it stand out": "Na tej stronie możesz napisać i wysłać nową wiadomość. Umożliwia to również ustawienie priorytetu wiadomości, co pomoże w jej odpowiednim wyróżnieniu",
+  "On this page you will find a table with the full list of users. You can view basic information about each of them": "Na tej stronie znajdziesz tabelę z pełną listą użytkowników. Możesz przeglądać podstawowe informacje o każdym z nich",
+  "On this page, available only to administrators, you can add a new user to the system. Complete the form to enter your new account details": "Na tej stronie, dostępnej tylko dla administratorów, możesz dodać nowego użytkownika do systemu. Wypełnij formularz, aby wprowadzić dane nowego konta",
+  "You do not have permission to view this subpage": "Nie posiadasz uprawnień do przeglądania tej podstrony"
 }
