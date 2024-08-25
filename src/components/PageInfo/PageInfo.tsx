@@ -8,7 +8,7 @@ export const PageInfo = ({ title, subtitle }: PageInfoType) => {
   const subtitleColor = theme.palette.grey['600']
 
   return (
-    <Box>
+    <Box mb={2}>
       <Typography component="h1" fontSize={20}>{t(title)}</Typography>
       <Typography component="h2" color={subtitleColor} fontSize={14}>{t(subtitle)}</Typography>
     </Box>

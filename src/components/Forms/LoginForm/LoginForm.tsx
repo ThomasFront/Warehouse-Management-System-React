@@ -8,15 +8,15 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 import { yupResolver } from '@hookform/resolvers/yup'
 import { SubmitHandler, useForm } from "react-hook-form";
-import ArrowDown from "../../assets/images/arrowDown.png"
-import warehouse from "../../assets/images/warehouse.jpg"
-import { Notation } from "../Notation";
-import { AnimationWrapper } from "../AnimationWrapper";
-import { loginFormSchema } from "../../utils/schema";
+import arrowDown from "../../../assets/images/arrowDown.png"
+import warehouse from "../../../assets/images/warehouse.jpg"
 import { LoginFormType } from "./types";
-import { TextFieldWithControl } from "../TextFieldWithControl";
-import { LanguageSelector } from "../LanguageSelector";
-import { useLogin } from "../../hooks/useLogin";
+import { useLogin } from "../../../hooks/useLogin";
+import { LanguageSelector } from "../../LanguageSelector";
+import { AnimationWrapper } from "../../AnimationWrapper";
+import { loginFormSchema } from "../../../utils/schema";
+import { TextFieldWithControl } from "../../TextFieldWithControl";
+import { Notation } from "../../Notation";
 
 export const LoginForm = () => {
   const theme = useTheme()
@@ -58,7 +58,7 @@ export const LoginForm = () => {
             display: { xs: "none", sm: "block" }
           }}
         >
-          <img src={ArrowDown} alt="arrow down" width="60px" />
+          <img src={arrowDown} alt="arrow down" width="60px" />
         </Box>
       </AnimationWrapper>
       <Box

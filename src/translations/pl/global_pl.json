@@ -44,5 +44,12 @@
   "On this page you can write and send a new message. This also allows you to set the priority of your message, which will help it stand out": "Na tej stronie możesz napisać i wysłać nową wiadomość. Umożliwia to również ustawienie priorytetu wiadomości, co pomoże w jej odpowiednim wyróżnieniu",
   "On this page you will find a table with the full list of users. You can view basic information about each of them": "Na tej stronie znajdziesz tabelę z pełną listą użytkowników. Możesz przeglądać podstawowe informacje o każdym z nich",
   "On this page, available only to administrators, you can add a new user to the system. Complete the form to enter your new account details": "Na tej stronie, dostępnej tylko dla administratorów, możesz dodać nowego użytkownika do systemu. Wypełnij formularz, aby wprowadzić dane nowego konta",
-  "You do not have permission to view this subpage": "Nie posiadasz uprawnień do przeglądania tej podstrony"
+  "You do not have permission to view this subpage": "Nie posiadasz uprawnień do przeglądania tej podstrony",
+  "Category name": "Nazwa kategorii",
+  "Category name is required": "Nazwa kategorii jest wymagana",
+  "The category name cannot be less than 6 characters long": "Nazwa kategorii nie może mieć mniej niż 6 znaków",
+  "The category name cannot be longer than 50 characters": "Nazwa kategorii nie może mieć więcej niż 50 znaków",
+  "The product category has been added": "Kategoria produktu została dodana",
+  "Failed to add product category": "Dodawanie kategorii produktu nie powiodło się",
+  "The name has already been taken.": "Taka kategoria produktu już istnieje"
 }

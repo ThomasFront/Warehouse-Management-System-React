@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { useTranslation } from 'react-i18next';
 import { loginUser } from '../api/auth';
-import { LoginFormType } from '../components/LoginForm/types';
+import { LoginFormType } from '../components/Forms/LoginForm/types';
 
 export const useLogin = () => {
   const { t } = useTranslation()

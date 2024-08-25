@@ -1,4 +1,4 @@
-import { LoginFormType } from "../components/LoginForm/types";
+import { LoginFormType } from "../components/Forms/LoginForm/types";
 import { backendApi } from "../config/axios";
 import { ApiAxiosResponse } from "../types/axios";
 

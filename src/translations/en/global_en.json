@@ -44,5 +44,12 @@
   "On this page you can write and send a new message. This also allows you to set the priority of your message, which will help it stand out": "On this page you can write and send a new message. This also allows you to set the priority of your message, which will help it stand out",
   "On this page you will find a table with the full list of users. You can view basic information about each of them": "On this page you will find a table with the full list of users. You can view basic information about each of them",
   "On this page, available only to administrators, you can add a new user to the system. Complete the form to enter your new account details": "On this page, available only to administrators, you can add a new user to the system. Complete the form to enter your new account details",
-  "You do not have permission to view this subpage": "You do not have permission to view this subpage"
+  "You do not have permission to view this subpage": "You do not have permission to view this subpage",
+  "Category name": "Category name",
+  "Category name is required": "Category name is required",
+  "The category name cannot be less than 6 characters long": "The category name cannot be less than 6 characters long",
+  "The category name cannot be longer than 50 characters": "The category name cannot be longer than 50 characters",
+  "The product category has been added": "The product category has been added",
+  "Failed to add product category": "Failed to add product category",
+  "The name has already been taken.": "The name has already been taken"
 }
