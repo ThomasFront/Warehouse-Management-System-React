@@ -24,6 +24,7 @@ export const FormWrapper = ({ children, submitButton, onSubmit }: FormWrapperTyp
           startIcon={icon}
           type="submit"
           loading={loading}
+          color="secondary"
         >
           {t(name)}
         </LoadingButton>
