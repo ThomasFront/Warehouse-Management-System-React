@@ -8,3 +8,7 @@ export const loginFormSchema = yup.object().shape({
 export const addCategorySchema = yup.object().shape({
   name: yup.string().required("Category name is required").min(3, "The category name cannot be less than 6 characters long").max(50, "The category name cannot be longer than 50 characters")
 })
+
+export const editCategorySchema = yup.object().shape({
+  name: yup.string().required("Category name is required").min(3, "The category name cannot be less than 6 characters long").max(50, "The category name cannot be longer than 50 characters")
+})

@@ -51,5 +51,19 @@
   "The category name cannot be longer than 50 characters": "The category name cannot be longer than 50 characters",
   "The product category has been added": "The product category has been added",
   "Failed to add product category": "Failed to add product category",
-  "The name has already been taken.": "The name has already been taken"
+  "The name has already been taken.": "The name has already been taken",
+  "An error occurred while downloading categories": "An error occurred while downloading categories",
+  "Name": "Name",
+  "Actions": "Actions",
+  "Edit": "Edit",
+  "Delete": "Delete",
+  "Edit category": "Edit category",
+  "Save": "Save",
+  "Cancel": "Cancel",
+  "The product category has been edited": "The product category has been edited",
+  "Failed to edit product category": "Failed to edit product category",
+  "Delete category": "Delete category",
+  "Are you sure you want to delete this product category?": "Are you sure you want to delete this product category?",
+  "Failed to delete product category": "Failed to delete product category",
+  "The product category has been removed": "The product category has been removed"
 }

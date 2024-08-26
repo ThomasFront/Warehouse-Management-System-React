@@ -51,5 +51,19 @@
   "The category name cannot be longer than 50 characters": "Nazwa kategorii nie może mieć więcej niż 50 znaków",
   "The product category has been added": "Kategoria produktu została dodana",
   "Failed to add product category": "Dodawanie kategorii produktu nie powiodło się",
-  "The name has already been taken.": "Taka kategoria produktu już istnieje"
+  "The name has already been taken.": "Taka nazwa już istnieje",
+  "An error occurred while downloading categories": "Wystąpił błąd podczas pobierania kategorii",
+  "Name": "Nazwa",
+  "Actions": "Akcje",
+  "Edit": "Edytuj",
+  "Delete": "Usuń",
+  "Edit category": "Edycja kategorii",
+  "Save": "Zapisz",
+  "Cancel": "Anuluj",
+  "The product category has been edited": "Kategoria produktu została zaktualizowana",
+  "Failed to edit product category": "Edycja kategorii produktu nie powiodła się",
+  "Delete category": "Usuwanie kategorii",
+  "Are you sure you want to delete this product category?": "Czy na pewno chcesz usunąć tę kategorię produktu?",
+  "Failed to delete product category": "Usuwanie kategorii produktu nie powiodło się",
+  "The product category has been removed": "Kategoria produktu została usunięta"
 }

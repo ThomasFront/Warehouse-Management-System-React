@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Outlet } from 'react-router';
+import { Outlet, useLocation } from 'react-router';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -21,6 +21,7 @@ import { CustomAvatar } from './CustomAvatar';
 
 export const Navbar = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const location = useLocation()
   const { menu, isMenuLoading } = useMenu()
   const { currentUser, isCurrentUserLoading, isAdmin } = useCurrentUser()
   const userData = isCurrentUserLoading ? <Skeleton width={175} height={40} /> : <Typography>{currentUser?.firstName} {currentUser?.lastName}</Typography>
@@ -115,7 +116,13 @@ export const Navbar = () => {
           </IconButton>
         </DrawerHeader>
         <Divider />
-        {isMenuLoading ? menuLoadingSkeleton : menu?.map(item => <MenuItem key={item.id} item={item} />)}
+        {isMenuLoading ? menuLoadingSkeleton : menu?.map(item => (
+          <MenuItem
+            key={item.id}
+            item={item}
+            currentPathname={location.pathname}
+          />
+        ))}
       </Drawer>
       <Main open={isDrawerOpen}>
         <DrawerHeader />
