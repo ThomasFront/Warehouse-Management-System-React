@@ -5,7 +5,6 @@ import EditIcon from '@mui/icons-material/Edit'
 import DeleteIcon from '@mui/icons-material/Delete'
 import { GridRenderCellParams } from "@mui/x-data-grid"
 import { PageInfo } from "../../../components/PageInfo"
-import { useCategory } from "../../../hooks/useCategory"
 import { DataGrid } from "../../../components/DataGrid"
 import { categoryColumns } from "./helpers"
 import { EditCategoryModal } from "../../../components/Modals/EditCategoryModal"
@@ -18,8 +17,6 @@ export const CategoryList = () => {
   const [showEditModal, setShowEditModal] = useState(false)
   const [showDeleteModal, setShowDeleteModal] = useState(false)
   const [selectedCategoryData, setSelectedCategoryData] = useState<Nullable<CategoryType>>(null)
-  const { categories, areCategoriesLoading } = useCategory()
-  const categoryRows = categories?.data
 
   const categoryColumnsWithActions = [
     ...categoryColumns(t),
@@ -77,9 +74,8 @@ export const CategoryList = () => {
           subtitle="Here you will find a complete list of categories that you can easily view, edit and delete"
         />
         <DataGrid
+          endpoint="categories"
           columns={categoryColumnsWithActions}
-          rows={categoryRows}
-          loading={areCategoriesLoading}
         />
       </Box>
     </>

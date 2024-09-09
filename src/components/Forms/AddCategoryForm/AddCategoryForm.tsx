@@ -8,7 +8,7 @@ import { AddCategoryFormType } from './types';
 import { useCategory } from '../../../hooks/useCategory';
 
 export const AddCategoryForm = () => {
-  const { createCategory, isCreateCategoryLoading } = useCategory(false)
+  const { createCategory, isCreateCategoryLoading } = useCategory()
 
   const { handleSubmit, formState: { errors }, control } = useForm<AddCategoryFormType>({
     resolver: yupResolver(addCategorySchema)

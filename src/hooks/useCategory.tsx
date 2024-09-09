@@ -1,11 +1,11 @@
 import { toast } from "react-toastify";
 import { useTranslation } from "react-i18next";
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { CategoryType, createProductCategory, deleteProductCategory, editProductCategory, getCategoryList } from "../api/category";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { CategoryType, createProductCategory, deleteProductCategory, editProductCategory } from "../api/category";
 import { ApiAxiosErrorResponse } from "../types/axios";
 import { showApiErrorMessage } from "../utils/error";
 
-export const useCategory = (shouldFetchCategories: boolean = true) => {
+export const useCategory = () => {
   const { t } = useTranslation()
   const queryClient = useQueryClient()
 
@@ -35,21 +35,9 @@ export const useCategory = (shouldFetchCategories: boolean = true) => {
     onError: (err: ApiAxiosErrorResponse) => showApiErrorMessage(err, t, "Failed to delete product category")
   });
 
-  const { data: categories, isLoading: areCategoriesLoading, isError: areCategoriesError } = useQuery({
-    queryKey: ["categories"],
-    queryFn: getCategoryList,
-    enabled: shouldFetchCategories
-  })
-
-  if (areCategoriesError) {
-    toast.error(t("An error occurred while downloading categories"))
-  }
-
   return {
     createCategory,
     isCreateCategoryLoading,
-    categories,
-    areCategoriesLoading,
     updateCategory,
     isUpdateCategoryLoading,
     deleteCategory,

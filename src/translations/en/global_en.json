@@ -52,7 +52,7 @@
   "The product category has been added": "The product category has been added",
   "Failed to add product category": "Failed to add product category",
   "The name has already been taken.": "The name has already been taken",
-  "An error occurred while downloading categories": "An error occurred while downloading categories",
+  "An error occurred while downloading data": "An error occurred while downloading table data",
   "Name": "Name",
   "Actions": "Actions",
   "Edit": "Edit",

@@ -52,7 +52,7 @@
   "The product category has been added": "Kategoria produktu została dodana",
   "Failed to add product category": "Dodawanie kategorii produktu nie powiodło się",
   "The name has already been taken.": "Taka nazwa już istnieje",
-  "An error occurred while downloading categories": "Wystąpił błąd podczas pobierania kategorii",
+  "An error occurred while downloading data": "Wystąpił błąd podczas pobierania danych tabeli",
   "Name": "Nazwa",
   "Actions": "Akcje",
   "Edit": "Edytuj",

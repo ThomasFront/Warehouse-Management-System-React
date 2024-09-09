@@ -9,7 +9,7 @@ import { TextFieldWithControl } from '../../TextFieldWithControl';
 import { useCategory } from '../../../hooks/useCategory';
 
 export const EditCategoryModal = ({ isOpen, onClose, category }: EditCategoryModalType) => {
-  const { updateCategory, isUpdateCategoryLoading } = useCategory(false)
+  const { updateCategory, isUpdateCategoryLoading } = useCategory()
 
   const { handleSubmit, formState: { errors }, control, clearErrors, setValue } = useForm<EditCategoryFormType>({
     resolver: yupResolver(editCategorySchema)

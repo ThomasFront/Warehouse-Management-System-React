@@ -22,5 +22,3 @@ export const createProductCategory = (categoryName: Omit<CategoryType, 'id'>) =>
 export const editProductCategory = ({id, name}: CategoryType) => backendApi.patch<CreateCategoryResponseType>(`categories/${id}`, {name})
 
 export const deleteProductCategory = (id: number) => backendApi.delete<DeleteCategoryResponseType>(`categories/${id}`)
-
-export const getCategoryList = () => backendApi.get<CategoriesResponseType>("categories").then(({data}) => data)
