@@ -8,8 +8,10 @@ export type MenuItemType = {
   sublinks?: MenuType
 }
 
-type MenuType = MenuItemType[]
+type MenuType = {
+  menu: MenuItemType[]
+}
 
 type MenuResponseType = ApiAxiosResponse<MenuType>
 
-export const getMenu = () => backendApi.get<MenuResponseType>("menu").then(({data}) => data.data)
+export const getMenu = () => backendApi.get<MenuResponseType>("menu").then(({data}) => data.data.menu)
