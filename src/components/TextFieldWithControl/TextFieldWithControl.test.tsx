@@ -25,7 +25,6 @@ const TextFieldWithControlWrapper = ({ errors = {}, requiredSign = false }) => {
       control={control}
       errors={errors}
       requiredSign={requiredSign}
-      data-testid="xd"
     />
   )
 }

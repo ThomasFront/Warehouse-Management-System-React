@@ -5,6 +5,7 @@ import { useNavigate } from "react-router"
 import { useTranslation } from "react-i18next"
 import { toast } from "react-toastify"
 import { useEffect } from "react"
+import { CreateUserForm } from "../../../components/Forms/CreateUserForm"
 
 export const UserAdd = () => {
   const navigate = useNavigate()
@@ -33,6 +34,7 @@ export const UserAdd = () => {
         title="Add user"
         subtitle="On this page, available only to administrators, you can add a new user to the system. Complete the form to enter your new account details"
       />
+      <CreateUserForm />
     </Box>
   )
 }

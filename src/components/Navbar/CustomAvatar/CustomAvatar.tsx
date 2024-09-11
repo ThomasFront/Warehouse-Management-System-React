@@ -4,11 +4,12 @@ import LogoutIcon from '@mui/icons-material/Logout'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { Avatar, Box, Divider, IconButton, ListItemIcon, Menu, MenuItem, Tooltip, Typography, useTheme } from '@mui/material'
 import CircularProgress from '@mui/material/CircularProgress'
+import { useNavigate } from "react-router"
 import { Nullable } from '../../../types/common'
 import { useLogout } from '../../../hooks/useLogout'
-import { useNavigate } from "react-router"
+import { CustomAvatarType } from "./types";
 
-export const CustomAvatar = () => {
+export const CustomAvatar = ({ userInitials }: CustomAvatarType) => {
   const { t } = useTranslation()
   const theme = useTheme()
   const { logout, isLogoutLoading } = useLogout()
@@ -28,7 +29,7 @@ export const CustomAvatar = () => {
     <Box sx={{ flexGrow: 0 }} data-testid="customAvatar">
       <Tooltip title={t("Settings")}>
         <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-          <Avatar />
+          <Avatar>{userInitials}</Avatar>
         </IconButton>
       </Tooltip>
       <Menu

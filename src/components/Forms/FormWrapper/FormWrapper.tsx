@@ -11,6 +11,7 @@ export const FormWrapper = ({ children, submitButton, onSubmit }: FormWrapperTyp
       component="form"
       onSubmit={onSubmit}
       sx={{ p: 2 }}
+      data-testid="formWrapper"
     >
       <Box>
         {children}
@@ -25,6 +26,7 @@ export const FormWrapper = ({ children, submitButton, onSubmit }: FormWrapperTyp
           type="submit"
           loading={loading}
           color="secondary"
+          data-testid="submitButton"
         >
           {t(name)}
         </LoadingButton>

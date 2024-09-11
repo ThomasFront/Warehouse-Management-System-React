@@ -18,12 +18,14 @@ import { useMenu } from '../../hooks/useMenu';
 import { MenuItem } from './MenuItem';
 import { LanguageSelector } from '../LanguageSelector';
 import { CustomAvatar } from './CustomAvatar';
+import { getUserInitials } from '../../utils/user';
 
 export const Navbar = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const location = useLocation()
   const { menu, isMenuLoading } = useMenu()
   const { currentUser, isCurrentUserLoading, isAdmin } = useCurrentUser()
+  const userInitials = getUserInitials(currentUser?.firstName, currentUser?.lastName)
   const userData = isCurrentUserLoading ? <Skeleton width={175} height={40} /> : <Typography>{currentUser?.firstName} {currentUser?.lastName}</Typography>
 
   const handleDrawerOpen = () => {
@@ -86,7 +88,7 @@ export const Navbar = () => {
               )}
               {userData}
             </Box>
-            <CustomAvatar />
+            <CustomAvatar userInitials={userInitials} />
           </Box>
         </Toolbar>
       </AppBar>

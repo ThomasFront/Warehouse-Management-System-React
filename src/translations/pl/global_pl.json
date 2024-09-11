@@ -65,5 +65,21 @@
   "Delete category": "Usuwanie kategorii",
   "Are you sure you want to delete this product category?": "Czy na pewno chcesz usunąć tę kategorię produktu?",
   "Failed to delete product category": "Usuwanie kategorii produktu nie powiodło się",
-  "The product category has been removed": "Kategoria produktu została usunięta"
+  "The product category has been removed": "Kategoria produktu została usunięta",
+  "Create user": "Stwórz użytkownika",
+  "First name": "Imię",
+  "Last name": "Nazwisko",
+  "First name is required": "Imię jest jest wymagane",
+  "The first name cannot be less than 3 characters long": "Imię nie może mieć mniej niż 3 znaków",
+  "The first name cannot be longer than 50 characters": "Imię nie może mieć więcej niż 50 znaków",
+  "Last name is required": "Nazwisko jest jest wymagane",
+  "The last name cannot be less than 3 characters long": "Nazwisko nie może mieć mniej niż 3 znaków",
+  "The last name cannot be longer than 50 characters": "Nazwisko nie może mieć więcej niż 50 znaków",
+  "Role": "Rola",
+  "Role is required": "Rola jest wymagana",
+  "Administrator": "Administrator",
+  "User": "Użytkownik",
+  "The user has been created": "Użytkownik został stworzony",
+  "Failed to create new user": "Tworzenie użytkownika nie powiodło się",
+  "The email has already been taken.": "Adres e-mail jest już zajęty"
 }

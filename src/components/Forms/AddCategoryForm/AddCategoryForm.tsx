@@ -31,6 +31,7 @@ export const AddCategoryForm = () => {
         requiredSign
         control={control}
         errors={errors}
+        data-testid="categoryInput"
       />
     </FormWrapper>
   )

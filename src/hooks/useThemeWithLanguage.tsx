@@ -45,6 +45,16 @@ export const useThemeWithLanguage = () => {
             }
           }
         },
+        MuiSelect: {
+          defaultProps: {
+            size: "small"
+          },
+          styleOverrides: {
+            root: {
+              backgroundColor: "#F5F5F5"
+            }
+          }
+        },
         MuiDataGrid: {
           styleOverrides: {
             root: {
