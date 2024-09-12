@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
 import SaveAsIcon from '@mui/icons-material/SaveAs';
-import { ModalWrapper } from "../ModalWrapper"
 import { EditCategoryFormType, EditCategoryModalType } from "./types"
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { editCategorySchema } from '../../../utils/schema';
-import { TextFieldWithControl } from '../../TextFieldWithControl';
-import { useCategory } from '../../../hooks/useCategory';
+import { useCategory } from '../../../../hooks/useCategory';
+import { editCategorySchema } from '../../../../utils/schema';
+import { ModalWrapper } from '../../ModalWrapper';
+import { TextFieldWithControl } from '../../../TextFieldWithControl';
 
 export const EditCategoryModal = ({ isOpen, onClose, category }: EditCategoryModalType) => {
   const { updateCategory, isUpdateCategoryLoading } = useCategory()

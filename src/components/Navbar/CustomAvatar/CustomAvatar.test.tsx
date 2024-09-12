@@ -10,7 +10,7 @@ describe("CustomAvatar", () => {
     render(
       <BrowserRouter>
         <QueryClientProvider client={queryClient}>
-          <CustomAvatar />
+          <CustomAvatar userInitials="AB" />
         </QueryClientProvider>
       </BrowserRouter>
     )

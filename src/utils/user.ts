@@ -1,1 +1,0 @@
-export const getUserInitials = (firstName?: string, lastName?: string) => `${firstName?.[0]?.toUpperCase() || ""}${lastName?.[0]?.toUpperCase() || ""}`

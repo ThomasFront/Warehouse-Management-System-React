@@ -81,5 +81,16 @@
   "User": "Użytkownik",
   "The user has been created": "Użytkownik został stworzony",
   "Failed to create new user": "Tworzenie użytkownika nie powiodło się",
-  "The email has already been taken.": "Adres e-mail jest już zajęty"
+  "The email has already been taken.": "Adres e-mail jest już zajęty",
+  "See profile": "Zobacz profil",
+  "Delete user": "Usuwanie użytkownika",
+  "Are you sure you want to delete this user?": "Czy na pewno chcesz usunąć tego użytkownika?",
+  "The user has been removed": "Użytkownik został usunięty",
+  "Failed to delete user": "Usuwanie użytkownika nie powiodło się",
+  "You cannot delete your account": "Nie możesz usunąć swojego konta",
+  "Avatar": "Awatar",
+  "Edit user": "Edycja użytkownika",
+  "New password": "Nowe hasło",
+  "The user has been edited": "Użytkownik został zaktualizowany",
+  "Failed to edit user": "Edycja użytkownika nie powiodła się"
 }

@@ -6,7 +6,7 @@ import { useQuery } from '@tanstack/react-query';
 import { toast } from 'react-toastify';
 import { useTranslation } from 'react-i18next';
 import { getDataGrid } from '../../api/dataGrid';
-import { ApiCollectionResponse } from '../../types/common';
+import { ApiCollectionResponse } from '../../types/axios';
 import "./styles.css"
 
 export const DataGrid = <T,>({ endpoint, ...props }: DataGridType) => {

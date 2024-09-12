@@ -1,13 +1,14 @@
 import { CreateUserFormType } from "../components/Forms/CreateUserForm/types";
+import { EditUserFormType } from "../components/Modals/User/EditUserModal/types";
 import { backendApi } from "../config/axios";
-import { ApiAxiosResponse } from "../types/axios";
+import { ApiAxiosResponse, ApiAxiosWithMessageResponse } from "../types/axios";
 
-type GetCurrentUserResponseType = ApiAxiosResponse<{
+type UserResponseType = ApiAxiosResponse<{
   user: UserType
 }>
 
-type UserType = {
-  id: string
+export type UserType = {
+  id: number
   firstName: string
   lastName: string
   email: string
@@ -16,10 +17,10 @@ type UserType = {
   createdAt: string
 }
 
-type CreateNewUserResponseType = ApiAxiosResponse<{
-  message: string
-}>
+export const getCurrentUser = () => backendApi.get<UserResponseType>("auth/me").then(({data}) => data.data.user)
 
-export const getCurrentUser = () => backendApi.get<GetCurrentUserResponseType>("auth/me").then(({data}) => data.data.user)
+export const createNewUser = (userData: CreateUserFormType) => backendApi.post<ApiAxiosWithMessageResponse>("auth/register", userData)
 
-export const createNewUser = (userData: CreateUserFormType) => backendApi.post<CreateNewUserResponseType>("auth/register", userData)
+export const deleteUserById = (userId: number) => backendApi.delete<ApiAxiosWithMessageResponse>(`users/${userId}`)
+
+export const editUser = (userData: EditUserFormType) => backendApi.patch<UserResponseType>(`users/${userData.id}`, userData)

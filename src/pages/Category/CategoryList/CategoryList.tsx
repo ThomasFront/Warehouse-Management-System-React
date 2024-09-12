@@ -6,11 +6,11 @@ import DeleteIcon from '@mui/icons-material/Delete'
 import { GridRenderCellParams } from "@mui/x-data-grid"
 import { PageInfo } from "../../../components/PageInfo"
 import { DataGrid } from "../../../components/DataGrid"
-import { categoryColumns } from "./helpers"
-import { EditCategoryModal } from "../../../components/Modals/EditCategoryModal"
+import { categoryColumns } from "./columns"
+import { EditCategoryModal } from "../../../components/Modals/Category/EditCategoryModal"
 import { Nullable } from "../../../types/common"
 import { CategoryType } from "../../../api/category"
-import { DeleteCategoryModal } from "../../../components/Modals/DeleteCategoryModal"
+import { DeleteCategoryModal } from "../../../components/Modals/Category/DeleteCategoryModal"
 
 export const CategoryList = () => {
   const { t } = useTranslation()
@@ -58,16 +58,6 @@ export const CategoryList = () => {
 
   return (
     <>
-      <EditCategoryModal
-        isOpen={showEditModal}
-        onClose={() => setShowEditModal(false)}
-        category={selectedCategoryData}
-      />
-      <DeleteCategoryModal
-        isOpen={showDeleteModal}
-        onClose={() => setShowDeleteModal(false)}
-        categoryId={selectedCategoryData?.id}
-      />
       <Box>
         <PageInfo
           title="Category list"
@@ -78,6 +68,16 @@ export const CategoryList = () => {
           columns={categoryColumnsWithActions}
         />
       </Box>
+      <EditCategoryModal
+        isOpen={showEditModal}
+        onClose={() => setShowEditModal(false)}
+        category={selectedCategoryData}
+      />
+      <DeleteCategoryModal
+        isOpen={showDeleteModal}
+        onClose={() => setShowDeleteModal(false)}
+        categoryId={selectedCategoryData?.id}
+      />
     </>
   )
 }

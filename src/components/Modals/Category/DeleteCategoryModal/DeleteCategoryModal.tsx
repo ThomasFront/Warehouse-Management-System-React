@@ -1,9 +1,9 @@
 import { useTranslation } from 'react-i18next';
 import { Typography } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
-import { ModalWrapper } from "../ModalWrapper"
 import { DeleteCategoryModalType } from "./types"
-import { useCategory } from '../../../hooks/useCategory';
+import { ModalWrapper } from '../../ModalWrapper';
+import { useCategory } from '../../../../hooks/useCategory';
 
 export const DeleteCategoryModal = ({ isOpen, onClose, categoryId }: DeleteCategoryModalType) => {
   const { t } = useTranslation()

@@ -81,5 +81,16 @@
   "User": "User",
   "The user has been created": "The user has been created",
   "Failed to create new user": "Failed to create new user",
-  "The email has already been taken.": "The e-mail address has already been taken"
+  "The email has already been taken.": "The e-mail address has already been taken",
+  "See profile": "See profile",
+  "Delete user": "Delete user",
+  "Are you sure you want to delete this user?": "Are you sure you want to delete this user?",
+  "The user has been removed": "The user has been removed",
+  "Failed to delete user": "Failed to delete user",
+  "You cannot delete your account": "You cannot delete your account",
+  "Avatar": "Avatar",
+  "Edit user": "Edit user",
+  "New password": "New password",
+  "The user has been edited": "The user has been edited",
+  "Failed to edit user": "Failed to edit user"
 }

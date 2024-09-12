@@ -1,6 +1,6 @@
 import { TFunction } from "i18next";
 
-export const categoryColumns = (t: TFunction<"translation", undefined>) => ([
+export const categoryColumns = (t: TFunction) => ([
   { 
     field: "id",
     headerName: "ID",

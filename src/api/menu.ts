@@ -5,7 +5,7 @@ export type MenuItemType = {
   id: number
   name: string
   url?: string
-  sublinks?: MenuType
+  sublinks?: MenuItemType[]
 }
 
 type MenuType = {

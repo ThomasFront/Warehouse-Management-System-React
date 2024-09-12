@@ -15,6 +15,7 @@ import { UserList } from "./pages/User/UserList"
 import { UserAdd } from "./pages/User/UserAdd"
 import { ThemeProvider } from "@mui/material"
 import { useThemeWithLanguage } from "./hooks/useThemeWithLanguage"
+import { UserProfile } from "./pages/User/UserProfile"
 
 export const App = () => {
   const theme = useThemeWithLanguage()
@@ -36,6 +37,7 @@ export const App = () => {
           <Route path="/message-add" element={<MessageAdd />} />
           <Route path="/user-list" element={<UserList />} />
           <Route path="/user-add" element={<UserAdd />} />
+          <Route path="/user/:userId" element={<UserProfile />} />
         </Route>
       </Routes>
     </ThemeProvider>

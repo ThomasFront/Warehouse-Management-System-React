@@ -1,4 +1,4 @@
-import { CommonModalType } from "../ModalWrapper/types";
+import { CommonModalType } from "../../ModalWrapper/types"
 
 export type DeleteCategoryModalType = {
   categoryId?: number

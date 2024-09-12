@@ -47,7 +47,7 @@ export const ModalWrapper = ({ isOpen, onClose, title, children, agreeButton, di
           {children}
         </Box>
       </DialogContent>
-      <DialogActions>
+      <DialogActions sx={{ px: 3, pb: 2 }}>
         {disagreeButton && (
           <Button
             onClick={disagreeButton.onClick}

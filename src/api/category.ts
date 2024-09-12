@@ -1,6 +1,5 @@
 import { backendApi } from "../config/axios";
-import { ApiAxiosResponse } from "../types/axios";
-import { ApiCollectionResponse } from "../types/common";
+import { ApiAxiosResponse, ApiAxiosWithMessageResponse, ApiCollectionResponse } from "../types/axios";
 
 export type CategoryType = {
   id: number
@@ -13,12 +12,8 @@ export type CreateCategoryResponseType = ApiAxiosResponse<{
   category: CategoryType
 }>
 
-type DeleteCategoryResponseType = ApiAxiosResponse<{
-  message: string
-}>
-
 export const createProductCategory = (categoryName: Omit<CategoryType, 'id'>) => backendApi.post<CreateCategoryResponseType>("categories", categoryName)
 
 export const editProductCategory = ({id, name}: CategoryType) => backendApi.patch<CreateCategoryResponseType>(`categories/${id}`, {name})
 
-export const deleteProductCategory = (id: number) => backendApi.delete<DeleteCategoryResponseType>(`categories/${id}`)
+export const deleteProductCategory = (id: number) => backendApi.delete<ApiAxiosWithMessageResponse>(`categories/${id}`)

@@ -10,3 +10,21 @@ type ApiErrorType = {
 }
 
 export type ApiAxiosErrorResponse = AxiosError<ApiErrorType>
+
+type MetaType = {
+  currentPage: number
+  lastPage: number
+  perPage: number
+  from: number
+  to: number
+  total: number
+}
+
+export type ApiCollectionResponse<T> = {
+  data: T[]
+  meta: MetaType
+}
+
+export type ApiAxiosWithMessageResponse = ApiAxiosResponse<{
+  message: string
+}>

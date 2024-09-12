@@ -15,7 +15,7 @@ describe("MenuItem", () => {
 
     render(
       <BrowserRouter>
-        <MenuItem item={mockMenuItem} />
+        <MenuItem item={mockMenuItem} currentPathname="/users" />
       </BrowserRouter>
     );
 

@@ -17,8 +17,8 @@ import { FullScreenLoading } from '../FullScreenLoading';
 import { useMenu } from '../../hooks/useMenu';
 import { MenuItem } from './MenuItem';
 import { LanguageSelector } from '../LanguageSelector';
+import { getUserInitials } from '../../utils/common';
 import { CustomAvatar } from './CustomAvatar';
-import { getUserInitials } from '../../utils/user';
 
 export const Navbar = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);

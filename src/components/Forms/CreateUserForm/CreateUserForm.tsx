@@ -10,7 +10,7 @@ import { createUserSchema } from '../../../utils/schema';
 import { CreateUserFormType } from './types';
 import { SelectWithControl } from '../../SelectWithControl';
 import { roleOptions } from '../../../utils/constants';
-import { getUserInitials } from '../../../utils/user';
+import { getUserInitials } from '../../../utils/common';
 import { useUser } from '../../../hooks/useUser';
 
 export const CreateUserForm = () => {
