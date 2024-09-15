@@ -22,7 +22,7 @@ export const userColumns = (t: TFunction) => ([
       const userColorTheme = row.colorTheme
       const userInitials = getUserInitials(firstName, lastName)
 
-      return <Avatar sx={{ border: `1px solid ${userColorTheme}` }}>{userInitials}</Avatar>
+      return <Avatar sx={{ border: `2px solid ${userColorTheme}` }}>{userInitials}</Avatar>
     }
   },
   {
@@ -45,7 +45,7 @@ export const userColumns = (t: TFunction) => ([
       return (
         <Box display="flex" alignItems="center" gap={0.5}>
           {isAdmin && (
-            <Tooltip title="Admin">
+            <Tooltip title={t("Admin")}>
               <StarIcon sx={{ mb: 0.5, color: "#ffd32c" }} />
             </Tooltip>
           )}

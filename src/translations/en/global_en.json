@@ -92,5 +92,12 @@
   "Edit user": "Edit user",
   "New password": "New password",
   "The user has been edited": "The user has been edited",
-  "Failed to edit user": "Failed to edit user"
+  "Failed to edit user": "Failed to edit user",
+  "User download failed": "User download failed",
+  "First name and last name": "First name and last name",
+  "Account created": "Account created",
+  "Edit profile": "Edit profile",
+  "Color theme": "Color theme",
+  "The user profile has been edited": "The user profile has been edited",
+  "Failed to edit user profile": "Failed to edit user profile"
 }

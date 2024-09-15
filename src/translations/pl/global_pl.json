@@ -92,5 +92,12 @@
   "Edit user": "Edycja użytkownika",
   "New password": "Nowe hasło",
   "The user has been edited": "Użytkownik został zaktualizowany",
-  "Failed to edit user": "Edycja użytkownika nie powiodła się"
+  "Failed to edit user": "Edycja użytkownika nie powiodła się",
+  "User download failed": "Pobieranie użytkownika nie powiodło się",
+  "First name and last name": "Imię i nazwisko",
+  "Account created": "Konto stworzone",
+  "Edit profile": "Edycja profilu",
+  "Color theme": "Motyw kolorystyczny",
+  "The user profile has been edited": "Profil użytkownika został zaktualizowany",
+  "Failed to edit user profile": "Aktualizacja profilu użytkownika nie powiodła się"
 }

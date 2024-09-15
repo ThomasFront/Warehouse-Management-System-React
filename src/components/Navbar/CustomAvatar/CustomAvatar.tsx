@@ -9,7 +9,7 @@ import { Nullable } from '../../../types/common'
 import { useLogout } from '../../../hooks/useLogout'
 import { CustomAvatarType } from "./types";
 
-export const CustomAvatar = ({ userInitials }: CustomAvatarType) => {
+export const CustomAvatar = ({ userId, userInitials }: CustomAvatarType) => {
   const { t } = useTranslation()
   const theme = useTheme()
   const { logout, isLogoutLoading } = useLogout()
@@ -48,7 +48,7 @@ export const CustomAvatar = ({ userInitials }: CustomAvatarType) => {
         onClose={handleCloseUserMenu}
       >
         <MenuItem onClick={() => {
-          navigate("my-profile")
+          navigate(`user/${userId}`)
           handleCloseUserMenu()
         }}>
           <ListItemIcon>

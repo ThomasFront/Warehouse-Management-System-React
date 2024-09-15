@@ -35,3 +35,7 @@ export const updateUserSchema = yup.object().shape({
     value => !value || value.length >= 6
   )
 })
+
+export const updateUserProfileSchema = yup.object().shape({
+  colorTheme: yup.string(),
+})

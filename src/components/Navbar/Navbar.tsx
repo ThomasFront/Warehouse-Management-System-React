@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Outlet, useLocation } from 'react-router';
+import { t } from 'i18next';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -82,13 +83,16 @@ export const Navbar = () => {
               gap={0.5}
             >
               {isAdmin && (
-                <Tooltip title="Admin">
+                <Tooltip title={t("Admin")}>
                   <StarIcon sx={{ mb: 0.5, color: "#ffd32c" }} />
                 </Tooltip>
               )}
               {userData}
             </Box>
-            <CustomAvatar userInitials={userInitials} />
+            <CustomAvatar
+              userId={currentUser?.id}
+              userInitials={userInitials}
+            />
           </Box>
         </Toolbar>
       </AppBar>

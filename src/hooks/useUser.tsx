@@ -1,13 +1,15 @@
-import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useTranslation } from "react-i18next";
 import { toast } from "react-toastify";
-import { createNewUser, deleteUserById, editUser } from "../api/user";
+import { createNewUser, deleteUserById, editUser, editUserProfile, getUserById } from "../api/user";
 import { CreateUserFormType } from "../components/Forms/CreateUserForm/types";
 import { ApiAxiosErrorResponse } from "../types/axios";
 import { showApiErrorMessage } from "../utils/error";
 import { EditUserFormType } from "../components/Modals/User/EditUserModal/types";
+import { useEffect } from "react";
+import { EditUserProfilePayloadType } from "../components/Modals/User/EditUserProfileModal/types";
 
-export const useUser = () => {
+export const useUser = (userId?: string) => {
   const { t } = useTranslation()
   const queryClient = useQueryClient()
 
@@ -37,12 +39,41 @@ export const useUser = () => {
     onError: (err: ApiAxiosErrorResponse) => showApiErrorMessage(err, t, "Failed to edit user")
   });
 
+  const { mutateAsync: editProfile, isPending: isEditProfileLoading } = useMutation({
+    mutationFn: (userData: EditUserProfilePayloadType) => editUserProfile(userData),
+    onSuccess: () => {
+      toast.success(t("The user profile has been edited"))
+      queryClient.invalidateQueries({ queryKey: ["user", userId] })
+    },
+    onError: (err: ApiAxiosErrorResponse) => showApiErrorMessage(err, t, "Failed to edit user profile")
+  });
+
+  const { data: user, isLoading: isUserLoading, isError: isUserError } = useQuery({
+    queryKey: ["user", userId],
+    queryFn: () => getUserById(userId),
+    enabled: !!userId
+  })
+
+  useEffect(() => {
+    if (userId && isUserError) {
+      toast.error(t("User download failed"))
+    }
+  }, [userId, isUserError, t])
+
+  const isAdmin = user?.role === "admin"
+
   return {
     createUser,
     isCreateUserLoading,
     deleteUser,
     isDeleteUserLoading,
     updateUser,
-    isUpdateUserLoading
+    isUpdateUserLoading,
+    user,
+    isAdmin,
+    isUserLoading,
+    isUserError,
+    editProfile,
+    isEditProfileLoading
   }
 }

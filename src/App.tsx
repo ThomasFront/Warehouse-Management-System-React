@@ -8,7 +8,6 @@ import { CategoryList } from "./pages/Category/CategoryList"
 import { CategoryAdd } from "./pages/Category/CategoryAdd"
 import { SalesHistory } from "./pages/Sales/SalesHistory"
 import { SalesAdd } from "./pages/Sales/SalesAdd"
-import { MyProfile } from "./pages/MyProfile"
 import { MessageList } from "./pages/Message/MessageList"
 import { MessageAdd } from "./pages/Message/MessageAdd"
 import { UserList } from "./pages/User/UserList"
@@ -32,7 +31,6 @@ export const App = () => {
           <Route path="/category-add" element={<CategoryAdd />} />
           <Route path="/sales-history" element={<SalesHistory />} />
           <Route path="/sales-add" element={<SalesAdd />} />
-          <Route path="/my-profile" element={<MyProfile />} />
           <Route path="/message-list" element={<MessageList />} />
           <Route path="/message-add" element={<MessageAdd />} />
           <Route path="/user-list" element={<UserList />} />

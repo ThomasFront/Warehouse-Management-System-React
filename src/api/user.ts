@@ -1,5 +1,6 @@
 import { CreateUserFormType } from "../components/Forms/CreateUserForm/types";
 import { EditUserFormType } from "../components/Modals/User/EditUserModal/types";
+import { EditUserProfilePayloadType } from "../components/Modals/User/EditUserProfileModal/types";
 import { backendApi } from "../config/axios";
 import { ApiAxiosResponse, ApiAxiosWithMessageResponse } from "../types/axios";
 
@@ -24,3 +25,7 @@ export const createNewUser = (userData: CreateUserFormType) => backendApi.post<A
 export const deleteUserById = (userId: number) => backendApi.delete<ApiAxiosWithMessageResponse>(`users/${userId}`)
 
 export const editUser = (userData: EditUserFormType) => backendApi.patch<UserResponseType>(`users/${userData.id}`, userData)
+
+export const editUserProfile = (userData: EditUserProfilePayloadType) => backendApi.patch<ApiAxiosWithMessageResponse>(`users/${userData.id}/profile`, userData)
+
+export const getUserById = (userId?: string) => backendApi.get<UserResponseType>(`users/${userId}`).then(({data}) => data.data.user)
