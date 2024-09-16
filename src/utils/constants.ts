@@ -10,3 +10,18 @@ export const roleOptions = (t: TFunction) => ([
     value: "user"
   }
 ])
+
+export const messagePriorityOptions = (t: TFunction) => ([
+  {
+    label: t("High"),
+    value: "high"
+  },
+  {
+    label: t("Medium"),
+    value: "medium"
+  },
+  {
+    label: t("Low"),
+    value: "low"
+  }
+])

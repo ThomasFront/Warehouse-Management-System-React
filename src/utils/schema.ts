@@ -6,11 +6,11 @@ export const loginFormSchema = yup.object().shape({
 })
 
 export const addCategorySchema = yup.object().shape({
-  name: yup.string().required("Category name is required").min(3, "The category name cannot be less than 6 characters long").max(50, "The category name cannot be longer than 50 characters")
+  name: yup.string().required("Category name is required").min(3, "The category name cannot be less than 3 characters long").max(50, "The category name cannot be longer than 50 characters")
 })
 
 export const editCategorySchema = yup.object().shape({
-  name: yup.string().required("Category name is required").min(3, "The category name cannot be less than 6 characters long").max(50, "The category name cannot be longer than 50 characters")
+  name: yup.string().required("Category name is required").min(3, "The category name cannot be less than 3 characters long").max(50, "The category name cannot be longer than 50 characters")
 })
 
 export const createUserSchema = yup.object().shape({
@@ -39,4 +39,10 @@ export const updateUserSchema = yup.object().shape({
 export const updateUserProfileSchema = yup.object().shape({
   colorTheme: yup.string(),
   avatar: yup.mixed()
+})
+
+export const addMessageSchema = yup.object().shape({
+  title: yup.string().required("Title is required").min(6, "The title cannot be less than 6 characters long").max(50, "The title cannot be longer than 50 characters"),
+  priority: yup.string().required("Priority is required"),
+  message: yup.string().required("Message is required").min(10, "The message cannot be less than 10 characters long").max(500, "The message cannot be longer than 500 characters"),
 })

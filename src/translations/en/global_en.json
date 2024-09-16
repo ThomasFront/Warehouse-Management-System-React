@@ -101,5 +101,20 @@
   "The user profile has been edited": "The user profile has been edited",
   "Failed to edit user profile": "Failed to edit user profile",
   "Upload avatar": "Upload avatar",
-  "Failed to upload avatar": "Failed to upload avatar"
+  "Failed to upload avatar": "Failed to upload avatar",
+  "Title": "Title",
+  "Title is required": "Title is required",
+  "The title cannot be less than 6 characters long": "The title cannot be less than 6 characters long",
+  "The title cannot be longer than 50 characters": "The title cannot be longer than 50 characters",
+  "Priority": "Message priority",
+  "Priority is required": "Message priority is required",
+  "Message": "Message content",
+  "Message is required": "Message is required",
+  "The message cannot be less than 10 characters long": "The message cannot be less than 10 characters long",
+  "The message cannot be longer than 500 characters": "The message cannot be longer than 500 characters",
+  "High": "High",
+  "Medium": "Medium",
+  "Low": "Low",
+  "The message has been added": "The message has been added",
+  "Failed to add message": "Failed to add message"
 }

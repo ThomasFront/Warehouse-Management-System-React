@@ -16,6 +16,7 @@ export const CustomAvatar = ({ userId, userAvatar, userInitials }: CustomAvatarT
   const navigate = useNavigate()
   const logoutLoadingColor = theme.palette.grey[600]
   const [anchorElUser, setAnchorElUser] = useState<Nullable<HTMLElement>>(null)
+  const userAvatarUrl = `${import.meta.env.VITE_BACKEND_LARAVEL}${userAvatar}`
 
   const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElUser(event.currentTarget)
@@ -29,7 +30,7 @@ export const CustomAvatar = ({ userId, userAvatar, userInitials }: CustomAvatarT
     <Box sx={{ flexGrow: 0 }} data-testid="customAvatar">
       <Tooltip title={t("Settings")}>
         <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-          <Avatar src={`${import.meta.env.VITE_BACKEND_LARAVEL}${userAvatar}`}>{userInitials}</Avatar>
+          <Avatar src={userAvatarUrl}>{userInitials}</Avatar>
         </IconButton>
       </Tooltip>
       <Menu

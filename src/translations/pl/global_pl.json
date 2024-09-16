@@ -101,5 +101,20 @@
   "The user profile has been edited": "Profil użytkownika został zaktualizowany",
   "Failed to edit user profile": "Aktualizacja profilu użytkownika nie powiodła się",
   "Upload avatar": "Wybierz awatar",
-  "Failed to upload avatar": "Wgrywanie awataru nie powiodło się"
+  "Failed to upload avatar": "Wgrywanie awataru nie powiodło się",
+  "Title": "Tytuł",
+  "Title is required": "Tytuł jest wymagany",
+  "The title cannot be less than 6 characters long": "Tytuł nie może mieć mniej niż 6 znaków",
+  "The title cannot be longer than 50 characters": "Tytuł nie może mieć więcej niż 50 znaków",
+  "Priority": "Priorytet wiadomości",
+  "Priority is required": "Priorytet wiadomości jest wymagany",
+  "Message": "Treść wiadomości",
+  "Message is required": "Wiadomość jest wymagana",
+  "The message cannot be less than 10 characters long": "Wiadomość nie może mieć mniej niż 10 znaków",
+  "The message cannot be longer than 500 characters": "Wiadomość nie może mieć więcej niż 500 znaków",
+  "High": "Wysoki",
+  "Medium": "Średni",
+  "Low": "Niski",
+  "The message has been added": "Wiadomość została dodana",
+  "Failed to add message": "Dodawanie wiadomości nie powiodło się"
 }

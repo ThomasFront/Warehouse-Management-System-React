@@ -3,10 +3,9 @@ import { useParams } from "react-router"
 import { Avatar, Box, Button, Grid, Skeleton, Tooltip, useTheme } from "@mui/material"
 import StarIcon from '@mui/icons-material/Star';
 import { useTranslation } from "react-i18next";
-import { format, parseISO } from "date-fns"
 import { useUser } from "../../../hooks/useUser"
 import { ErrorMessage } from "../../../components/ErrorMessage"
-import { capitalizeFirstLetter, getUserInitials } from "../../../utils/common"
+import { capitalizeFirstLetter, formatDateToDisplay, getUserInitials } from "../../../utils/common"
 import { FancyDataItem } from "../../../components/FancyDataItem";
 import { useCurrentUser } from "../../../hooks/useCurrentUser";
 import { EditUserProfileModal } from "../../../components/Modals/User/EditUserProfileModal";
@@ -22,6 +21,7 @@ export const UserProfile = () => {
   const grayColor = theme.palette.grey[300]
   const userAvatar = user?.avatar
   const userInitials = getUserInitials(user?.firstName, user?.lastName)
+  const userAvatarUrl = `${import.meta.env.VITE_BACKEND_LARAVEL}${userAvatar}`
 
   if (isUserLoading) return <Skeleton height={200} />
 
@@ -31,7 +31,7 @@ export const UserProfile = () => {
     </Box>
   )
 
-  const formattedDate = format(parseISO(user?.createdAt as string), "dd-MM-yyyy")
+  const dateToDisplay = formatDateToDisplay(user?.createdAt as string)
 
   return (
     <>
@@ -75,7 +75,7 @@ export const UserProfile = () => {
                 fontSize: 70,
                 border: `2px solid ${user?.colorTheme}`
               }}
-              src={`${import.meta.env.VITE_BACKEND_LARAVEL}${userAvatar}`}
+              src={userAvatarUrl}
             >
               {userInitials}
             </Avatar>
@@ -94,7 +94,7 @@ export const UserProfile = () => {
                 <FancyDataItem label={t("Role")} value={t(capitalizeFirstLetter(user?.role as string))} colorTheme={user?.colorTheme} />
               </Grid>
               <Grid item xs={12} sm={6} lg={3}>
-                <FancyDataItem label={t("Account created")} value={formattedDate} colorTheme={user?.colorTheme} />
+                <FancyDataItem label={t("Account created")} value={dateToDisplay} colorTheme={user?.colorTheme} />
               </Grid>
             </Grid>
           </Box>

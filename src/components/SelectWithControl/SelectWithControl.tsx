@@ -20,7 +20,7 @@ export const SelectWithControl = <TFormValues extends FieldValues>({
   return (
     <Box>
       <FormControl fullWidth error={!!errors?.[name]}>
-        <InputLabel>{labelValue}</InputLabel>
+        <InputLabel shrink>{labelValue}</InputLabel>
         <Controller
           name={name as Path<TFormValues>}
           control={control}

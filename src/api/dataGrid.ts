@@ -2,7 +2,7 @@ import { GridFilterModel, GridSortModel } from "@mui/x-data-grid";
 import { backendApi } from "../config/axios";
 
 export const getDataGrid = <T>(
-  endpoint: string,
+   endpoint: string,
    page: number,
    pageSize: number,
    sortModel: GridSortModel,
