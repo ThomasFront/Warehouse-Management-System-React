@@ -7,6 +7,7 @@ export type EditUserProfileModalType = {
 
 export type EditUserProfileFormType = {
   colorTheme?: string
+  avatarUrl?: string
 }
 
 export type EditUserProfilePayloadType = EditUserProfileFormType & {

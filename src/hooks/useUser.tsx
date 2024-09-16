@@ -44,6 +44,7 @@ export const useUser = (userId?: string) => {
     onSuccess: () => {
       toast.success(t("The user profile has been edited"))
       queryClient.invalidateQueries({ queryKey: ["user", userId] })
+      queryClient.invalidateQueries({ queryKey: ["currentUser"] })
     },
     onError: (err: ApiAxiosErrorResponse) => showApiErrorMessage(err, t, "Failed to edit user profile")
   });

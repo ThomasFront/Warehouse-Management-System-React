@@ -20,6 +20,7 @@ export const UserProfile = () => {
   const [showEditUserProfileModal, setShowEditUserProfileModal] = useState(false)
   const canEditUser = Number(currentUser?.id) === user?.id
   const grayColor = theme.palette.grey[300]
+  const userAvatar = user?.avatar
   const userInitials = getUserInitials(user?.firstName, user?.lastName)
 
   if (isUserLoading) return <Skeleton height={200} />
@@ -74,6 +75,7 @@ export const UserProfile = () => {
                 fontSize: 70,
                 border: `2px solid ${user?.colorTheme}`
               }}
+              src={`${import.meta.env.VITE_BACKEND_LARAVEL}${userAvatar}`}
             >
               {userInitials}
             </Avatar>

@@ -38,4 +38,5 @@ export const updateUserSchema = yup.object().shape({
 
 export const updateUserProfileSchema = yup.object().shape({
   colorTheme: yup.string(),
+  avatar: yup.mixed()
 })

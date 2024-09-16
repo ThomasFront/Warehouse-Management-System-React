@@ -9,7 +9,7 @@ import { Nullable } from '../../../types/common'
 import { useLogout } from '../../../hooks/useLogout'
 import { CustomAvatarType } from "./types";
 
-export const CustomAvatar = ({ userId, userInitials }: CustomAvatarType) => {
+export const CustomAvatar = ({ userId, userAvatar, userInitials }: CustomAvatarType) => {
   const { t } = useTranslation()
   const theme = useTheme()
   const { logout, isLogoutLoading } = useLogout()
@@ -29,7 +29,7 @@ export const CustomAvatar = ({ userId, userInitials }: CustomAvatarType) => {
     <Box sx={{ flexGrow: 0 }} data-testid="customAvatar">
       <Tooltip title={t("Settings")}>
         <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-          <Avatar>{userInitials}</Avatar>
+          <Avatar src={`${import.meta.env.VITE_BACKEND_LARAVEL}${userAvatar}`}>{userInitials}</Avatar>
         </IconButton>
       </Tooltip>
       <Menu

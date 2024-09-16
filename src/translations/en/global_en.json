@@ -99,5 +99,7 @@
   "Edit profile": "Edit profile",
   "Color theme": "Color theme",
   "The user profile has been edited": "The user profile has been edited",
-  "Failed to edit user profile": "Failed to edit user profile"
+  "Failed to edit user profile": "Failed to edit user profile",
+  "Upload avatar": "Upload avatar",
+  "Failed to upload avatar": "Failed to upload avatar"
 }

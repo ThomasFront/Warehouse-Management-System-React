@@ -99,5 +99,7 @@
   "Edit profile": "Edycja profilu",
   "Color theme": "Motyw kolorystyczny",
   "The user profile has been edited": "Profil użytkownika został zaktualizowany",
-  "Failed to edit user profile": "Aktualizacja profilu użytkownika nie powiodła się"
+  "Failed to edit user profile": "Aktualizacja profilu użytkownika nie powiodła się",
+  "Upload avatar": "Wybierz awatar",
+  "Failed to upload avatar": "Wgrywanie awataru nie powiodło się"
 }

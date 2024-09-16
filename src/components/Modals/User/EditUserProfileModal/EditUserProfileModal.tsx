@@ -1,5 +1,7 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
+import { toast } from "react-toastify";
 import { yupResolver } from '@hookform/resolvers/yup';
 import SaveAsIcon from '@mui/icons-material/SaveAs';
 import { Box } from "@mui/material";
@@ -8,10 +10,17 @@ import { EditUserProfileFormType, EditUserProfileModalType } from "./types"
 import { updateUserProfileSchema } from "../../../../utils/schema";
 import { TextFieldWithControl } from "../../../TextFieldWithControl";
 import { useUser } from "../../../../hooks/useUser";
+import { FileUploader } from "../../../FileUploader";
+import { Nullable } from "../../../../types/common";
+import { uploadAvatar } from "../../../../api/user";
+import { removeEmptyStrings } from "../../../../utils/common";
 
 export const EditUserProfileModal = ({ isOpen, onClose, user }: EditUserProfileModalType) => {
+  const { t } = useTranslation()
+  const [avatarUrl, setAvatarUrl] = useState("")
+  const [uploadedFileName, setUploadedFileName] = useState("")
+  const [progress, setProgress] = useState(0)
   const { editProfile, isEditProfileLoading } = useUser(user?.id.toString())
-
   const { handleSubmit, formState: { errors }, control, clearErrors, setValue } = useForm<EditUserProfileFormType>({
     resolver: yupResolver(updateUserProfileSchema)
   })
@@ -20,17 +29,33 @@ export const EditUserProfileModal = ({ isOpen, onClose, user }: EditUserProfileM
     if (user) {
       const payload = {
         ...data,
+        avatarUrl,
         id: user.id
       }
 
-      const res = await editProfile(payload)
+      const clearedPayload = removeEmptyStrings(payload)
+
+      const res = await editProfile(clearedPayload)
 
       if (res.status === 200) {
-        onClose()
+        closeAndClearErrors()
       }
     }
   }
 
+  const onFileUpload = async (file: Nullable<File>) => {
+    if (file) {
+      const fileName = file.name
+      try {
+        const { data } = await uploadAvatar(file, setProgress)
+
+        setAvatarUrl(data.data.avatarUrl)
+        setUploadedFileName(fileName)
+      } catch {
+        toast.error(t("Failed to upload avatar"))
+      }
+    }
+  }
 
   const closeAndClearErrors = () => {
     onClose()
@@ -58,6 +83,11 @@ export const EditUserProfileModal = ({ isOpen, onClose, user }: EditUserProfileM
       }}
     >
       <Box display="flex" flexDirection="column" gap={2}>
+        <FileUploader
+          fileName={uploadedFileName}
+          progress={progress}
+          onChange={onFileUpload}
+        />
         <TextFieldWithControl
           name="colorTheme"
           label="Color theme"

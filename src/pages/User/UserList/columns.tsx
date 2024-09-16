@@ -21,8 +21,16 @@ export const userColumns = (t: TFunction) => ([
       const lastName = row.lastName
       const userColorTheme = row.colorTheme
       const userInitials = getUserInitials(firstName, lastName)
+      const userAvatar = row.avatar
 
-      return <Avatar sx={{ border: `2px solid ${userColorTheme}` }}>{userInitials}</Avatar>
+      return (
+        <Avatar
+          sx={{ border: `2px solid ${userColorTheme}` }}
+          src={`${import.meta.env.VITE_BACKEND_LARAVEL}${userAvatar}`}
+        >
+          {userInitials}
+        </Avatar>
+      )
     }
   },
   {

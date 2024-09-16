@@ -26,6 +26,7 @@ export const Navbar = () => {
   const location = useLocation()
   const { menu, isMenuLoading } = useMenu()
   const { currentUser, isCurrentUserLoading, isAdmin } = useCurrentUser()
+  const userAvatar = currentUser?.avatar
   const userInitials = getUserInitials(currentUser?.firstName, currentUser?.lastName)
   const userData = isCurrentUserLoading ? <Skeleton width={175} height={40} /> : <Typography>{currentUser?.firstName} {currentUser?.lastName}</Typography>
 
@@ -91,6 +92,7 @@ export const Navbar = () => {
             </Box>
             <CustomAvatar
               userId={currentUser?.id}
+              userAvatar={userAvatar}
               userInitials={userInitials}
             />
           </Box>
