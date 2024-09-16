@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { toast } from "react-toastify";
 import { yupResolver } from '@hookform/resolvers/yup';
 import SaveAsIcon from '@mui/icons-material/SaveAs';
-import { Box } from "@mui/material";
+import { Avatar, Box } from "@mui/material";
 import { ModalWrapper } from "../../ModalWrapper"
 import { EditUserProfileFormType, EditUserProfileModalType } from "./types"
 import { updateUserProfileSchema } from "../../../../utils/schema";
@@ -13,7 +13,7 @@ import { useUser } from "../../../../hooks/useUser";
 import { FileUploader } from "../../../FileUploader";
 import { Nullable } from "../../../../types/common";
 import { uploadAvatar } from "../../../../api/user";
-import { removeEmptyStrings } from "../../../../utils/common";
+import { removeEmptyStrings, transformAvatarStorageUrl } from "../../../../utils/common";
 
 export const EditUserProfileModal = ({ isOpen, onClose, user }: EditUserProfileModalType) => {
   const { t } = useTranslation()
@@ -83,6 +83,17 @@ export const EditUserProfileModal = ({ isOpen, onClose, user }: EditUserProfileM
       }}
     >
       <Box display="flex" flexDirection="column" gap={2}>
+        {avatarUrl && (
+          <Box display="flex" justifyContent="center">
+            <Avatar
+              sx={{
+                height: 100,
+                width: 100,
+              }}
+              src={`${import.meta.env.VITE_BACKEND_LARAVEL}/${transformAvatarStorageUrl(avatarUrl)}`}
+            />
+          </Box>
+        )}
         <FileUploader
           fileName={uploadedFileName}
           progress={progress}

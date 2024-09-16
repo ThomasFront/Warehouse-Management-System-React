@@ -7,7 +7,7 @@ import { FileUploaderType } from "./types";
 export const FileUploader = ({ fileName, progress, onChange }: FileUploaderType) => {
   const { t } = useTranslation()
   const theme = useTheme()
-  const borderColor = theme.palette.grey[400]
+  const grayColor = theme.palette.grey[400]
   const successColor = theme.palette.success.light
   const isUploaded = progress === 100 && fileName
   const isShowPercentUpload = progress > 0 && progress <= 99
@@ -30,11 +30,15 @@ export const FileUploader = ({ fileName, progress, onChange }: FileUploaderType)
           justifyContent="center"
           gap={1}
           width="100%"
-          border={`1px solid ${borderColor}`}
+          border={`1px solid ${grayColor}`}
           borderRadius={1}
           p={2}
           sx={{
             cursor: "pointer",
+            "&:hover": {
+              bgcolor: grayColor
+            },
+            transition: "background-color 0.2s"
           }}
         >
           <Box

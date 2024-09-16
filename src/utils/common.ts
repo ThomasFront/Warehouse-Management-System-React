@@ -2,7 +2,7 @@ export const capitalizeFirstLetter = (text: string) => text.charAt(0).toUpperCas
 
 export const getUserInitials = (firstName?: string, lastName?: string) => `${firstName?.[0]?.toUpperCase() || ""}${lastName?.[0]?.toUpperCase() || ""}`
 
-export const  removeEmptyStrings = (obj: any) => {
+export const removeEmptyStrings = (obj: any) => {
   const cleanedObj = { ...obj }
   
   Object.keys(cleanedObj).forEach((key) => {
@@ -13,3 +13,5 @@ export const  removeEmptyStrings = (obj: any) => {
 
   return cleanedObj;
 }
+
+export const transformAvatarStorageUrl = (url: string) => url.replace("public", "storage")
