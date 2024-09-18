@@ -116,5 +116,12 @@
   "Medium": "Średni",
   "Low": "Niski",
   "The message has been added": "Wiadomość została dodana",
-  "Failed to add message": "Dodawanie wiadomości nie powiodło się"
+  "Failed to add message": "Dodawanie wiadomości nie powiodło się",
+  "The message has been removed": "Wiadomość została usunięta",
+  "Failed to delete message": "Usuwanie wiadomości nie powiodło się",
+  "Delete message": "Usuwanie wiadomości",
+  "Are you sure you want to delete this message?": "Czy na pewno chcesz usunąć tę wiadomość?",
+  "Edit message": "Edycja wiadomości",
+  "The message has been edited": "Wiadomość została zaktualizowana",
+  "Failed to edit message": "Aktualizacja wiadomości nie powiodła się"
 }

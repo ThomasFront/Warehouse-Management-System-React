@@ -20,6 +20,8 @@ export const transformAvatarStorageUrl = (url: string) => url.replace("public", 
 
 export const formatDateToDisplay = (date: string) => format(parseISO(date), "dd-MM-yyyy")
 
+export const formatDateTimeToDisplay = (date: string) => format(parseISO(date), "dd-MM-yyyy, HH:mm")
+
 export const handleMessagePriorityColor = (priority: string) => {
   switch(priority) {
     case "high":

@@ -46,3 +46,9 @@ export const addMessageSchema = yup.object().shape({
   priority: yup.string().required("Priority is required"),
   message: yup.string().required("Message is required").min(10, "The message cannot be less than 10 characters long").max(500, "The message cannot be longer than 500 characters"),
 })
+
+export const editMessageSchema = yup.object().shape({
+  title: yup.string().required("Title is required").min(6, "The title cannot be less than 6 characters long").max(50, "The title cannot be longer than 50 characters"),
+  priority: yup.string().required("Priority is required"),
+  message: yup.string().required("Message is required").min(10, "The message cannot be less than 10 characters long").max(500, "The message cannot be longer than 500 characters"),
+})

@@ -13,7 +13,7 @@ export const FileUploader = ({ fileName, progress, onChange }: FileUploaderType)
   const isShowPercentUpload = progress > 0 && progress <= 99
 
   return (
-    <Box>
+    <Box data-testid="fileUploader">
       <input
         id="upload"
         type="file"
@@ -51,6 +51,7 @@ export const FileUploader = ({ fileName, progress, onChange }: FileUploaderType)
               bgcolor: successColor,
               transition: "width 0.2s"
             }}
+            data-testid="progress"
           />
           {isUploaded ? <CheckCircleIcon sx={{ zIndex: 1 }} /> : <CloudUploadIcon sx={{ zIndex: 1 }} />}
           {isShowPercentUpload && <Typography zIndex={1}>{progress}%</Typography>}

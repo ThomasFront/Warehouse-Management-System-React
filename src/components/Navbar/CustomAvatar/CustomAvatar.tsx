@@ -1,7 +1,6 @@
 import { useState } from "react"
 import { useTranslation } from "react-i18next"
 import LogoutIcon from '@mui/icons-material/Logout'
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { Avatar, Box, Divider, IconButton, ListItemIcon, Menu, MenuItem, Tooltip, Typography, useTheme } from '@mui/material'
 import CircularProgress from '@mui/material/CircularProgress'
 import { useNavigate } from "react-router"
@@ -48,13 +47,18 @@ export const CustomAvatar = ({ userId, userAvatar, userInitials }: CustomAvatarT
         open={Boolean(anchorElUser)}
         onClose={handleCloseUserMenu}
       >
-        <MenuItem onClick={() => {
-          navigate(`user/${userId}`)
-          handleCloseUserMenu()
-        }}>
-          <ListItemIcon>
-            <AccountCircleIcon />
-          </ListItemIcon>
+        <MenuItem
+          onClick={() => {
+            navigate(`user/${userId}`)
+            handleCloseUserMenu()
+          }}
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            gap: 1
+          }}
+        >
+          <Avatar sx={{ width: 24, height: 24 }} src={userAvatarUrl}>{userInitials}</Avatar>
           <Typography textAlign="center">{t("My profile")}</Typography>
         </MenuItem>
         <Divider />

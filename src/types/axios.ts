@@ -11,7 +11,7 @@ type ApiErrorType = {
 
 export type ApiAxiosErrorResponse = AxiosError<ApiErrorType>
 
-type MetaType = {
+export type MetaType = {
   currentPage: number
   lastPage: number
   perPage: number

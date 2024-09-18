@@ -116,5 +116,12 @@
   "Medium": "Medium",
   "Low": "Low",
   "The message has been added": "The message has been added",
-  "Failed to add message": "Failed to add message"
+  "Failed to add message": "Failed to add message",
+  "The message has been removed": "The message has been removed",
+  "Failed to delete message": "Failed to delete message",
+  "Delete message": "Delete message",
+  "Are you sure you want to delete this message?": "Are you sure you want to delete this message?",
+  "Edit message": "Edit message",
+  "The message has been edited": "The message has been edited",
+  "Failed to edit message": "Failed to edit message"
 }

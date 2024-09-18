@@ -41,6 +41,7 @@ export const AddMessageForm = () => {
             requiredSign
             control={control}
             errors={errors}
+            data-testid="title"
           />
         </Grid>
         <Grid item xs={12} md={4}>
@@ -51,6 +52,7 @@ export const AddMessageForm = () => {
             control={control}
             errors={errors}
             options={messagePriorityOptions(t)}
+            data-testid="priority"
           />
         </Grid>
         <Grid item xs={12}>
@@ -62,6 +64,7 @@ export const AddMessageForm = () => {
             errors={errors}
             multiline
             minRows={10}
+            data-testid="message"
           />
         </Grid>
       </Grid>
