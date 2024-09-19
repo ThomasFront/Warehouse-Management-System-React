@@ -38,7 +38,7 @@ export const getUserById = (userId?: string) => backendApi.get<UserResponseType>
 
 export const uploadAvatar = (file: File, onUploadProgress: (progress: number) => void) => {
   const formData = new FormData()
-  formData.append('avatar', file)
+  formData.append('image', file)
 
   return backendApi.post<UploadAvatarResponseType>("users/avatar", formData, {
     headers: {
