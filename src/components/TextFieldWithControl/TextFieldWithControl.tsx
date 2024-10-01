@@ -1,8 +1,8 @@
+import { useTranslation } from "react-i18next"
 import { Box, TextField } from "@mui/material"
 import { Controller, FieldValues, Path } from "react-hook-form"
 import { TextFieldWithControlType } from "./types"
 import { ErrorMessage } from "../ErrorMessage"
-import { useTranslation } from "react-i18next"
 
 export const TextFieldWithControl = <TFormValues extends FieldValues>({ name, label, errors, control, requiredSign, ...props }: TextFieldWithControlType<TFormValues>) => {
   const { t } = useTranslation()

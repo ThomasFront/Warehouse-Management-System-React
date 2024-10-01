@@ -13,4 +13,5 @@ export type SelectWithControlType<TFormValues extends FieldValues> = {
   control: Control<TFormValues>
   requiredSign?: boolean
   options: SelectOptionType[]
+  loading?: boolean
 } & SelectProps

@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { toast } from "react-toastify";
 import { yupResolver } from '@hookform/resolvers/yup';
 import SaveAsIcon from '@mui/icons-material/SaveAs';
-import { Avatar, Box } from "@mui/material";
+import { Avatar, Box, useTheme } from "@mui/material";
 import { ModalWrapper } from "../../ModalWrapper"
 import { EditUserProfileFormType, EditUserProfileModalType } from "./types"
 import { updateUserProfileSchema } from "../../../../utils/schema";
@@ -12,11 +12,13 @@ import { TextFieldWithControl } from "../../../TextFieldWithControl";
 import { useUser } from "../../../../hooks/useUser";
 import { FileUploader } from "../../../FileUploader";
 import { Nullable } from "../../../../types/common";
-import { uploadAvatar } from "../../../../api/user";
+import { uploadImage } from "../../../../api/user";
 import { removeEmptyStrings, transformAvatarStorageUrl } from "../../../../utils/common";
 
 export const EditUserProfileModal = ({ isOpen, onClose, user }: EditUserProfileModalType) => {
   const { t } = useTranslation()
+  const theme = useTheme()
+  const grayColor = theme.palette.grey[400]
   const [avatarUrl, setAvatarUrl] = useState("")
   const [uploadedFileName, setUploadedFileName] = useState("")
   const [progress, setProgress] = useState(0)
@@ -47,9 +49,9 @@ export const EditUserProfileModal = ({ isOpen, onClose, user }: EditUserProfileM
     if (file) {
       const fileName = file.name
       try {
-        const { data } = await uploadAvatar(file, setProgress)
+        const { data } = await uploadImage(file, setProgress, "users/avatar")
 
-        setAvatarUrl(data.data.avatarUrl)
+        setAvatarUrl(data.data.image)
         setUploadedFileName(fileName)
       } catch {
         toast.error(t("Failed to upload avatar"))
@@ -89,12 +91,14 @@ export const EditUserProfileModal = ({ isOpen, onClose, user }: EditUserProfileM
               sx={{
                 height: 100,
                 width: 100,
+                border: `1px solid ${grayColor}`
               }}
               src={`${import.meta.env.VITE_BACKEND_LARAVEL}/${transformAvatarStorageUrl(avatarUrl)}`}
             />
           </Box>
         )}
         <FileUploader
+          label="Upload avatar"
           fileName={uploadedFileName}
           progress={progress}
           onChange={onFileUpload}

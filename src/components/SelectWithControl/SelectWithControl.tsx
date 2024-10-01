@@ -1,7 +1,7 @@
-import { Box, Select, MenuItem, FormControl, InputLabel } from "@mui/material"
+import { Box, Select, MenuItem, FormControl, InputLabel, InputAdornment, CircularProgress } from "@mui/material"
 import { Controller, FieldValues, Path } from "react-hook-form"
-import { ErrorMessage } from "../ErrorMessage"
 import { useTranslation } from "react-i18next"
+import { ErrorMessage } from "../ErrorMessage"
 import { SelectWithControlType } from "./types"
 
 export const SelectWithControl = <TFormValues extends FieldValues>({
@@ -11,6 +11,7 @@ export const SelectWithControl = <TFormValues extends FieldValues>({
   control,
   options,
   requiredSign,
+  loading,
   ...props
 }: SelectWithControlType<TFormValues>) => {
   const { t } = useTranslation()
@@ -19,8 +20,8 @@ export const SelectWithControl = <TFormValues extends FieldValues>({
 
   return (
     <Box>
-      <FormControl fullWidth error={!!errors?.[name]}>
-        <InputLabel shrink>{labelValue}</InputLabel>
+      <FormControl fullWidth size="small">
+        <InputLabel>{labelValue}</InputLabel>
         <Controller
           name={name as Path<TFormValues>}
           control={control}
@@ -29,6 +30,14 @@ export const SelectWithControl = <TFormValues extends FieldValues>({
               {...field}
               label={labelValue}
               value={field.value || ""}
+              disabled={loading}
+              endAdornment={
+                loading && (
+                  <InputAdornment position="end">
+                    <CircularProgress color="secondary" size={20} sx={{ mr: 3 }} />
+                  </InputAdornment>
+                )
+              }
               {...props}
             >
               {options.map(({ label, value }) => (

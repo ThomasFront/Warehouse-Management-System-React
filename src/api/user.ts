@@ -9,8 +9,8 @@ type UserResponseType = ApiAxiosResponse<{
   user: UserType
 }>
 
-type UploadAvatarResponseType = ApiAxiosResponse<{
-  avatarUrl: string
+type UploadImageResponseType = ApiAxiosResponse<{
+  image: string
 }>
 
 export type UserType = {
@@ -36,11 +36,11 @@ export const editUserProfile = (userData: EditUserProfilePayloadType) => backend
 
 export const getUserById = (userId?: string) => backendApi.get<UserResponseType>(`users/${userId}`).then(({data}) => data.data.user)
 
-export const uploadAvatar = (file: File, onUploadProgress: (progress: number) => void) => {
+export const uploadImage = (file: File, onUploadProgress: (progress: number) => void, url: string) => {
   const formData = new FormData()
   formData.append('image', file)
 
-  return backendApi.post<UploadAvatarResponseType>("users/avatar", formData, {
+  return backendApi.post<UploadImageResponseType>(url, formData, {
     headers: {
       "Content-Type": "multipart/form-data"
     },

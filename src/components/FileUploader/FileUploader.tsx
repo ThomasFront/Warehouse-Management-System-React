@@ -4,13 +4,14 @@ import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { FileUploaderType } from "./types";
 
-export const FileUploader = ({ fileName, progress, onChange }: FileUploaderType) => {
+export const FileUploader = ({ label, fileName, progress, onChange }: FileUploaderType) => {
   const { t } = useTranslation()
   const theme = useTheme()
   const grayColor = theme.palette.grey[400]
   const successColor = theme.palette.success.light
   const isUploaded = progress === 100 && fileName
   const isShowPercentUpload = progress > 0 && progress <= 99
+  const imageName = fileName && fileName.length >= 26 ? `${fileName.slice(0, 26)}...` : fileName
 
   return (
     <Box data-testid="fileUploader">
@@ -42,6 +43,7 @@ export const FileUploader = ({ fileName, progress, onChange }: FileUploaderType)
           }}
         >
           <Box
+            display="flex"
             position="absolute"
             top={0}
             left={0}
@@ -55,7 +57,7 @@ export const FileUploader = ({ fileName, progress, onChange }: FileUploaderType)
           />
           {isUploaded ? <CheckCircleIcon sx={{ zIndex: 1 }} /> : <CloudUploadIcon sx={{ zIndex: 1 }} />}
           {isShowPercentUpload && <Typography zIndex={1}>{progress}%</Typography>}
-          <Typography zIndex={1}>{isUploaded ? fileName : t("Upload avatar")}</Typography>
+          <Typography zIndex={1} textAlign="center" >{isUploaded ? imageName : t(label)}</Typography>
         </Box>
       </label>
     </Box >

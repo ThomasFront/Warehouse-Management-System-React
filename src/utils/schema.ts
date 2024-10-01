@@ -52,3 +52,23 @@ export const editMessageSchema = yup.object().shape({
   priority: yup.string().required("Priority is required"),
   message: yup.string().required("Message is required").min(10, "The message cannot be less than 10 characters long").max(500, "The message cannot be longer than 500 characters"),
 })
+
+export const addProductSchema = yup.object().shape({
+  name: yup.string().required("Product name is required").min(3, "The product name cannot be less than 3 characters long").max(100, "The product name cannot be longer than 100 characters"),
+  description: yup.string().required("Description is required").min(10, "The product name cannot be less than 10 characters long").max(250, "The product name cannot be longer than 250 characters"),
+  categoryId: yup.number().required("Category is required"),
+  price: yup
+    .string()
+    .transform((value, originalValue) => originalValue === "" ? undefined : value)
+    .matches(/^\d+(\.\d{1,2})?$/, "Price must be a valid number with up to 2 decimal places and cannot be negative")
+    .test("max-value", "Price cannot be greater than 10,000", (value) => value === undefined || parseFloat(value) <= 10000)
+    .required("Price is required"),
+  stock: yup
+    .number()
+    .transform((value, originalValue) =>  originalValue === "" ? undefined : value)
+    .typeError("Stock must be a number")
+    .required("Stock is required")
+    .integer("Stock must be an integer")
+    .min(0, "Stock cannot be negative")
+    .max(1000, "Stock cannot be greater than 1000")
+})
