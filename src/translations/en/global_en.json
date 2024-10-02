@@ -154,5 +154,8 @@
   "Delete product": "Delete product",
   "Are you sure you want to delete this product?": "Are you sure you want to delete this product?",
   "The product has been removed": "The product has been removed",
-  "Failed to delete product": "Failed to delete product"
+  "Failed to delete product": "Failed to delete product",
+  "Edit product": "Edit product",
+  "The product has been edited": "The product has been edited",
+  "Failed to edit product": "Failed to edit product"
 }

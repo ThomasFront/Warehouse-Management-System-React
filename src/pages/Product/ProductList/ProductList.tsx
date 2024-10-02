@@ -2,6 +2,7 @@ import { useState } from "react"
 import { useTranslation } from "react-i18next"
 import { Box, IconButton, Tooltip } from "@mui/material"
 import { PageInfo } from "../../../components/PageInfo"
+import EditIcon from '@mui/icons-material/Edit'
 import DeleteIcon from '@mui/icons-material/Delete'
 import { GridRenderCellParams } from "@mui/x-data-grid"
 import { productColumns } from "./columns"
@@ -9,10 +10,12 @@ import { DataGrid } from "../../../components/DataGrid"
 import { Nullable } from "../../../types/common"
 import { ProductType } from "../../../api/product"
 import { DeleteProductModal } from "../../../components/Modals/Product/DeleteProductModal"
+import { EditProductModal } from "../../../components/Modals/Product/EditProductModal"
 
 export const ProductList = () => {
   const { t } = useTranslation()
   const [showDeleteModal, setShowDeleteModal] = useState(false)
+  const [showEditModal, setShowEditModal] = useState(false)
   const [selectedProductData, setSelectedProductData] = useState<Nullable<ProductType>>(null)
 
   const productColumnsWithActions = [
@@ -25,17 +28,30 @@ export const ProductList = () => {
       sortable: false,
       hideable: false,
       renderCell: (params: GridRenderCellParams) => (
-        <Tooltip title={t("Delete")}>
-          <IconButton
-            color="secondary"
-            onClick={() => {
-              setShowDeleteModal(true)
-              setSelectedProductData(params.row)
-            }}
-          >
-            <DeleteIcon />
-          </IconButton>
-        </Tooltip>
+        <>
+          <Tooltip title={t("Edit")}>
+            <IconButton
+              color="secondary"
+              onClick={() => {
+                setShowEditModal(true)
+                setSelectedProductData(params.row)
+              }}
+            >
+              <EditIcon />
+            </IconButton>
+          </Tooltip>
+          <Tooltip title={t("Delete")}>
+            <IconButton
+              color="secondary"
+              onClick={() => {
+                setShowDeleteModal(true)
+                setSelectedProductData(params.row)
+              }}
+            >
+              <DeleteIcon />
+            </IconButton>
+          </Tooltip>
+        </>
       ),
     },
   ]
@@ -52,6 +68,11 @@ export const ProductList = () => {
           columns={productColumnsWithActions}
         />
       </Box>
+      <EditProductModal
+        isOpen={showEditModal}
+        onClose={() => setShowEditModal(false)}
+        product={selectedProductData}
+      />
       <DeleteProductModal
         isOpen={showDeleteModal}
         onClose={() => setShowDeleteModal(false)}

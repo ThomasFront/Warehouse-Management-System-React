@@ -1,9 +1,10 @@
 import { useTranslation } from "react-i18next";
 import { toast } from "react-toastify";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { addProduct, CreateProductRequestType, destroyProduct } from "../api/product";
+import { addProduct, CreateProductRequestType, destroyProduct, editMessage } from "../api/product";
 import { ApiAxiosErrorResponse } from "../types/axios";
 import { showApiErrorMessage } from "../utils/error";
+import { EditProductPayloadType } from "../components/Modals/Product/EditProductModal/types";
 
 export const useProduct = () => {
   const queryClient = useQueryClient()
@@ -27,10 +28,21 @@ export const useProduct = () => {
     onError: (err: ApiAxiosErrorResponse) => showApiErrorMessage(err, t, "Failed to delete product")
   });
 
+  const { mutateAsync: updateProduct, isPending: isUpdateProductLoading } = useMutation({
+    mutationFn: (product: EditProductPayloadType) => editMessage(product),
+    onSuccess: () => {
+      toast.success(t("The product has been edited"))
+      queryClient.invalidateQueries({ queryKey: ["products"] })
+    },
+    onError: (err: ApiAxiosErrorResponse) => showApiErrorMessage(err, t, "Failed to edit product")
+  });
+
   return {
     createProduct,
     isCreateProductsLoading,
     deleteProduct,
-    isDeleteProductLoading
+    isDeleteProductLoading,
+    updateProduct,
+    isUpdateProductLoading
   }
 }

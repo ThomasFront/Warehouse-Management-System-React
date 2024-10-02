@@ -1,3 +1,4 @@
+import { EditProductPayloadType } from "../components/Modals/Product/EditProductModal/types";
 import { backendApi } from "../config/axios";
 import { ApiAxiosResponse, ApiAxiosWithMessageResponse } from "../types/axios";
 import { Nullable } from "../types/common";
@@ -29,3 +30,5 @@ export type CreateProductResponseType = ApiAxiosResponse<{
 export const addProduct = (category: CreateProductRequestType) => backendApi.post<CreateProductResponseType>("products", category)
 
 export const destroyProduct = (id: number) => backendApi.delete<ApiAxiosWithMessageResponse>(`products/${id}`)
+
+export const editMessage = ({id, ...props}: EditProductPayloadType) => backendApi.patch<CreateProductResponseType>(`products/${id}`, props)
