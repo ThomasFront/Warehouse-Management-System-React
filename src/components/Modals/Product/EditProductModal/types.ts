@@ -9,4 +9,5 @@ export type EditProductModalType = {
 
 export type EditProductPayloadType = AddProductFormType & {
   id: number
+  productImageUrl?: string
 }
