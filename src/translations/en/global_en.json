@@ -147,5 +147,12 @@
   "Failed to upload product image": "Failed to upload product image",
   "Upload product image": "Upload product image",
   "The product has been added": "The product has been added",
-  "Failed to add product": "Failed to add product"
+  "Failed to add product": "Failed to add product",
+  "Image": "Image",
+  "Price": "Price",
+  "Stock": "Stock",
+  "Delete product": "Delete product",
+  "Are you sure you want to delete this product?": "Are you sure you want to delete this product?",
+  "The product has been removed": "The product has been removed",
+  "Failed to delete product": "Failed to delete product"
 }

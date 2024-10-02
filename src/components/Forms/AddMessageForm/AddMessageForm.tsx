@@ -10,17 +10,23 @@ import { AddMessageFormType } from './types';
 import { SelectWithControl } from '../../SelectWithControl';
 import { messagePriorityOptions } from '../../../utils/constants';
 import { useMessage } from '../../../hooks/useMessage';
+import { EmojiClickData } from "emoji-picker-react"
+import { EmojiPanel } from '../../EmojiPanel';
 
 export const AddMessageForm = () => {
   const { t } = useTranslation()
   const { createMessage, isCreateMessageLoading } = useMessage()
 
-  const { handleSubmit, formState: { errors }, control } = useForm<AddMessageFormType>({
+  const { handleSubmit, formState: { errors }, control, setValue, getValues } = useForm<AddMessageFormType>({
     resolver: yupResolver(addMessageSchema),
     defaultValues: {
       priority: "medium"
     }
   })
+
+  const handleEmojiClick = (e: EmojiClickData) => {
+    setValue("message", `${getValues("message") || ""}${e.emoji}`)
+  }
 
   const onSubmit: SubmitHandler<AddMessageFormType> = (data) => createMessage(data)
 
@@ -65,6 +71,11 @@ export const AddMessageForm = () => {
             multiline
             minRows={10}
             data-testid="message"
+          />
+          <EmojiPanel
+            onEmojiClick={handleEmojiClick}
+            onReactionClick={handleEmojiClick}
+            marginTop={2}
           />
         </Grid>
       </Grid>

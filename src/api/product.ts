@@ -1,5 +1,5 @@
 import { backendApi } from "../config/axios";
-import { ApiAxiosResponse } from "../types/axios";
+import { ApiAxiosResponse, ApiAxiosWithMessageResponse } from "../types/axios";
 import { Nullable } from "../types/common";
 import { CategoryType } from "./category";
 
@@ -27,3 +27,5 @@ export type CreateProductResponseType = ApiAxiosResponse<{
 }>
 
 export const addProduct = (category: CreateProductRequestType) => backendApi.post<CreateProductResponseType>("products", category)
+
+export const destroyProduct = (id: number) => backendApi.delete<ApiAxiosWithMessageResponse>(`products/${id}`)

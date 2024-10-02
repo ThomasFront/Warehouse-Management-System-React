@@ -1,8 +1,8 @@
+import { useTranslation } from 'react-i18next';
 import { AnimatePresence } from 'framer-motion';
 import { FormHelperText } from "@mui/material"
 import { ErrorMessageProps } from "./types"
 import { AnimationWrapper } from "../AnimationWrapper";
-import { useTranslation } from 'react-i18next';
 
 export const ErrorMessage = ({ message }: ErrorMessageProps) => {
   const { t } = useTranslation()

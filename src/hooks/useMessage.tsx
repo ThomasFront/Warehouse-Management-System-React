@@ -19,7 +19,7 @@ export const useMessage = (shouldGetMessages = false, page = 1) => {
     onError: (err: ApiAxiosErrorResponse) => showApiErrorMessage(err, t, "Failed to add message")
   });
 
-  const { data: messages, isLoading: areMessagesLoading } = useQuery({
+  const { data: messages, isLoading: areMessagesLoading, isRefetching: areMessagesRefetching } = useQuery({
     queryKey: ["messages", page],
     queryFn: () => getMessages(page),
     enabled: shouldGetMessages
@@ -46,6 +46,7 @@ export const useMessage = (shouldGetMessages = false, page = 1) => {
   return {
     messages,
     areMessagesLoading,
+    areMessagesRefetching,
     createMessage,
     isCreateMessageLoading,
     deleteMessage,

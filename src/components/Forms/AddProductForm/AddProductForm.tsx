@@ -15,12 +15,12 @@ import { Nullable } from "../../../types/common";
 import { transformAvatarStorageUrl } from "../../../utils/common";
 import { uploadImage } from "../../../api/user";
 import { DropdownVariant, useDropdownProvider } from "../../../hooks/useDropdownProvider";
-import { useProducts } from "../../../hooks/useProducts";
+import { useProduct } from "../../../hooks/useProduct";
 
 export const AddProductForm = () => {
   const { t } = useTranslation()
   const { dropdownProvider, isDropdownProviderLoading } = useDropdownProvider(DropdownVariant.Categories)
-  const { createProduct, isCreateProductsLoading } = useProducts()
+  const { createProduct, isCreateProductsLoading } = useProduct()
   const theme = useTheme()
   const grayColor = theme.palette.grey[400]
   const [uploadedFileName, setUploadedFileName] = useState("")

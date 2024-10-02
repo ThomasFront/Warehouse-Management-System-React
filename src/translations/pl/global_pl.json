@@ -147,5 +147,12 @@
   "Failed to upload product image": "Wgrywanie zdjęcia produktu nie powiodło się",
   "Upload product image": "Wybierz zdjęcie produktu",
   "The product has been added": "Produkt został dodany",
-  "Failed to add product": "Dodawanie produktu nie powiodło się"
+  "Failed to add product": "Dodawanie produktu nie powiodło się",
+  "Image": "Zdjęcie",
+  "Price": "Cena/sztuka",
+  "Stock": "Ilość na stanie",
+  "Delete product": "Usuwanie produktu",
+  "Are you sure you want to delete this product?": "Czy na pewno chcesz usunąć ten produkt?",
+  "The product has been removed": "Produkt został usunięty",
+  "Failed to delete product": "Usuwanie produktu nie powiodło się"
 }
