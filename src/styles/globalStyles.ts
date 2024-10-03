@@ -17,4 +17,8 @@ export const GlobalStyles = createGlobalStyle`
   .MuiDataGrid-row:hover{
     background-color: rgba(247, 68, 106, 0.2) !important;
   }
+
+  a {
+    text-decoration: none;
+  }
 `

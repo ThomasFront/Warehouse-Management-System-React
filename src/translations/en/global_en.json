@@ -158,5 +158,6 @@
   "Edit product": "Edit product",
   "The product has been edited": "The product has been edited",
   "Failed to edit product": "Failed to edit product",
-  "You cannot delete a category that is assigned to a product": "You cannot delete a category that is assigned to a product"
+  "You cannot delete a category that is assigned to a product": "You cannot delete a category that is assigned to a product",
+  "An error occurred while downloading the dashboard": "An error occurred while downloading the dashboard"
 }
