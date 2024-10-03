@@ -157,5 +157,6 @@
   "Failed to delete product": "Usuwanie produktu nie powiodło się",
   "Edit product": "Edycja produktu",
   "The product has been edited": "Produkt został zaktualizowany",
-  "Failed to edit product": "Aktualizacja produktu nie powiodła się"
+  "Failed to edit product": "Aktualizacja produktu nie powiodła się",
+  "You cannot delete a category that is assigned to a product": "Nie możesz usunąć kategorii która jest przypisana do produktu"
 }
