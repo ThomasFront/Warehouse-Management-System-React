@@ -14,6 +14,7 @@ import productDefaultImage from "../../../assets/images/productDefault.png"
 import { TextFieldWithControl } from "../../TextFieldWithControl";
 import { ErrorMessage } from "../../ErrorMessage";
 import { useSale } from "../../../hooks/useSale";
+import { useMemo } from "react";
 
 export const AddSaleForm = () => {
   const { addNewSale, isAddNewSaleLoading } = useSale()
@@ -25,9 +26,16 @@ export const AddSaleForm = () => {
     resolver: yupResolver(addSaleSchema),
   })
 
-  const selectedProductId = watch("productId")
   const selectedQuantity = watch("quantity")
+  const selectedProductId = watch("productId")
   const { product, isProductLoading } = useProduct(selectedProductId)
+
+  const totalPrice = useMemo(() => {
+    if (product) {
+      return `${(Number(product.price) * selectedQuantity).toFixed(2)} PLN`
+    }
+  }, [product, selectedQuantity])
+
   const isSaleDisabled = product && (selectedQuantity > product?.stock)
 
   const onSubmit: SubmitHandler<AddSaleFormType> = (data) => addNewSale(data)
@@ -86,6 +94,7 @@ export const AddSaleForm = () => {
           />
         </Grid>
       </Grid>
+      {!isSaleDisabled && selectedQuantity && selectedProductId && <Typography mt={1}>{t("Total price")}:  {totalPrice}</Typography>}
       {isSaleDisabled && <ErrorMessage message="You do not have this quantity of this product in stock" />}
     </FormWrapper>
   )

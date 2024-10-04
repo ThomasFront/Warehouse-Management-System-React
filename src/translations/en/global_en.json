@@ -166,5 +166,6 @@
   "You do not have this quantity of this product in stock": "You do not have this quantity of this product in stock",
   "Stock cannot be less than 1": "Stock cannot be less than 1",
   "The sale has been added": "The sale has been added",
-  "Failed to add sale": "Failed to add sale"
+  "Failed to add sale": "Failed to add sale",
+  "Total price": "Total price"
 }
