@@ -167,5 +167,6 @@
   "Stock cannot be less than 1": "Stock cannot be less than 1",
   "The sale has been added": "The sale has been added",
   "Failed to add sale": "Failed to add sale",
-  "Total price": "Total price"
+  "Total price": "Total price",
+  "Sales price": "Sales price"
 }

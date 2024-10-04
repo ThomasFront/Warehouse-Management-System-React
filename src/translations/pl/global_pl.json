@@ -167,5 +167,6 @@
   "Stock cannot be less than 1": "Ilość nie może być mniejsza niż 1",
   "The sale has been added": "Sprzedaż została dodana",
   "Failed to add sale": "Dodawanie sprzedaży nie powiodło się",
-  "Total price": "Cena całkowita"
+  "Total price": "Cena całkowita",
+  "Sales price": "Cena sprzedaży"
 }
