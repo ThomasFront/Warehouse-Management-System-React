@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next'
-import { Box, CircularProgress, Typography } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 import { DashboardDataItemType } from './types'
 import { Link } from 'react-router-dom'
 import { AnimationWrapper } from '../AnimationWrapper'
@@ -10,6 +10,8 @@ export const DashboardDataItem = ({ title, icon, count, color, navigateTo, isLoa
   return (
     <Link to={navigateTo}>
       <Box
+        position="relative"
+        overflow="hidden"
         display="flex"
         justifyContent="space-between"
         alignItems="center"
@@ -27,8 +29,13 @@ export const DashboardDataItem = ({ title, icon, count, color, navigateTo, isLoa
         }}
       >
         <Box>
-          {isLoading ? <CircularProgress size={36} /> : <Typography color="#fff" fontSize={48} fontWeight="bold">{count}</Typography>
-          }
+          <Typography
+            color="#fff"
+            fontSize={48}
+            fontWeight="bold"
+          >
+            {isLoading ? 0 : count}
+          </Typography>
           <Typography
             color="#fff"
             fontSize={18}
@@ -39,6 +46,14 @@ export const DashboardDataItem = ({ title, icon, count, color, navigateTo, isLoa
         <AnimationWrapper>
           {icon}
         </AnimationWrapper>
+        <Box
+          position="absolute"
+          bgcolor="rgba(255, 255, 255, 0.05)"
+          left={-50}
+          width={200}
+          height={200}
+          borderRadius={50}
+        />
       </Box>
     </Link>
   )

@@ -72,3 +72,14 @@ export const addProductSchema = yup.object().shape({
     .min(0, "Stock cannot be negative")
     .max(1000, "Stock cannot be greater than 1000")
 })
+
+export const addSaleSchema = yup.object().shape({
+  productId: yup.number().required("Product is required"),
+  quantity: yup
+    .number()
+    .transform((value, originalValue) =>  originalValue === "" ? undefined : value)
+    .typeError("Stock must be a number")
+    .required("Stock is required")
+    .integer("Stock must be an integer")
+    .min(2, "Stock cannot be less than 1")
+})

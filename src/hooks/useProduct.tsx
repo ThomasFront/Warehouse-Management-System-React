@@ -1,12 +1,13 @@
+import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { toast } from "react-toastify";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { addProduct, CreateProductRequestType, destroyProduct, editMessage } from "../api/product";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { addProduct, CreateProductRequestType, destroyProduct, editMessage, getProductById } from "../api/product";
 import { ApiAxiosErrorResponse } from "../types/axios";
 import { showApiErrorMessage } from "../utils/error";
 import { EditProductPayloadType } from "../components/Modals/Product/EditProductModal/types";
 
-export const useProduct = () => {
+export const useProduct = (productId?: number) => {
   const queryClient = useQueryClient()
   const { t } = useTranslation()
 
@@ -37,12 +38,26 @@ export const useProduct = () => {
     onError: (err: ApiAxiosErrorResponse) => showApiErrorMessage(err, t, "Failed to edit product")
   });
 
+  const { data: product, isLoading: isProductLoading, isError: isProductError } = useQuery({
+    queryKey: ["product", productId],
+    queryFn: () => getProductById(productId),
+    enabled: !!productId
+  })
+
+  useEffect(() => {
+    if (productId && isProductError) {
+      toast.error(t("Product download failed"))
+    }
+  }, [productId, isProductError, t])
+
   return {
     createProduct,
     isCreateProductsLoading,
     deleteProduct,
     isDeleteProductLoading,
     updateProduct,
-    isUpdateProductLoading
+    isUpdateProductLoading,
+    product,
+    isProductLoading,
   }
 }

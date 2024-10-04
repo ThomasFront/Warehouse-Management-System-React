@@ -2,7 +2,8 @@ import { useQuery } from "@tanstack/react-query"
 import { getDropdownProvider } from "../api/dropdownProvider"
 
 export enum DropdownVariant {
-  Categories = "categories"
+  Categories = "categories",
+  Products = "products"
 }
 
 export const useDropdownProvider = (name: DropdownVariant) => {

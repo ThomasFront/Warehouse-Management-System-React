@@ -4,7 +4,7 @@ import { LoadingButton } from "@mui/lab"
 import { FormWrapperType } from "./types"
 
 export const FormWrapper = ({ children, submitButton, onSubmit }: FormWrapperType) => {
-  const { name, icon, loading } = submitButton
+  const { name, icon, loading, disabled } = submitButton
 
   return (
     <Paper
@@ -25,6 +25,7 @@ export const FormWrapper = ({ children, submitButton, onSubmit }: FormWrapperTyp
           startIcon={icon}
           type="submit"
           loading={loading}
+          disabled={disabled}
           color="secondary"
           data-testid="submitButton"
         >

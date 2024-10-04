@@ -4,6 +4,7 @@ type SubmitButtonType = {
   name: string
   icon?: ReactNode
   loading?: boolean
+  disabled?: boolean
 }
 
 export type FormWrapperType = {

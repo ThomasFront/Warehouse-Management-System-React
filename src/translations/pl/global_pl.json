@@ -159,5 +159,12 @@
   "The product has been edited": "Produkt został zaktualizowany",
   "Failed to edit product": "Aktualizacja produktu nie powiodła się",
   "You cannot delete a category that is assigned to a product": "Nie możesz usunąć kategorii która jest przypisana do produktu",
-  "An error occurred while downloading the dashboard": "Wystąpił błąd podczas pobierania danych dashboardu"
+  "An error occurred while downloading the dashboard": "Wystąpił błąd podczas pobierania danych dashboardu",
+  "Product is required": "Produkt jest wymagany",
+  "Product": "Produkt",
+  "Product download failed": "Pobieranie produktu nie powiodło się",
+  "You do not have this quantity of this product in stock": "Nie posiadasz takiej ilości tego produktu na stanie",
+  "Stock cannot be less than 1": "Ilość nie może być mniejsza niż 1",
+  "The sale has been added": "Sprzedaż została dodana",
+  "Failed to add sale": "Dodawanie sprzedaży nie powiodło się"
 }

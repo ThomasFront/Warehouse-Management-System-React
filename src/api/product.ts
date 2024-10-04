@@ -27,8 +27,14 @@ export type CreateProductResponseType = ApiAxiosResponse<{
   product: ProductType
 }>
 
+type ProductResponseType = ApiAxiosResponse<{
+  product: ProductType
+}>
+
 export const addProduct = (category: CreateProductRequestType) => backendApi.post<CreateProductResponseType>("products", category)
 
 export const destroyProduct = (id: number) => backendApi.delete<ApiAxiosWithMessageResponse>(`products/${id}`)
 
 export const editMessage = ({id, ...props}: EditProductPayloadType) => backendApi.patch<CreateProductResponseType>(`products/${id}`, props)
+
+export const getProductById = (productId?: number) => backendApi.get<ProductResponseType>(`products/${productId}`).then(({data}) => data.data.product)

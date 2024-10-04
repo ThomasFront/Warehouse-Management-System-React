@@ -159,5 +159,12 @@
   "The product has been edited": "The product has been edited",
   "Failed to edit product": "Failed to edit product",
   "You cannot delete a category that is assigned to a product": "You cannot delete a category that is assigned to a product",
-  "An error occurred while downloading the dashboard": "An error occurred while downloading the dashboard"
+  "An error occurred while downloading the dashboard": "An error occurred while downloading the dashboard",
+  "Product is required": "Product is required",
+  "Product": "Product",
+  "Product download failed": "Product download failed",
+  "You do not have this quantity of this product in stock": "You do not have this quantity of this product in stock",
+  "Stock cannot be less than 1": "Stock cannot be less than 1",
+  "The sale has been added": "The sale has been added",
+  "Failed to add sale": "Failed to add sale"
 }
