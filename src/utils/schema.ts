@@ -81,5 +81,5 @@ export const addSaleSchema = yup.object().shape({
     .typeError("Stock must be a number")
     .required("Stock is required")
     .integer("Stock must be an integer")
-    .min(2, "Stock cannot be less than 1")
+    .min(1, "Stock cannot be less than 1")
 })
