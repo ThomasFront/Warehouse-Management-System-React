@@ -187,5 +187,6 @@
   "Sales in the year": "Sales in the year",
   "Exported sales histories to CSV": "Exported sales histories to CSV file",
   "Export of sales history to CSV file failed": "Export of sales history to CSV file failed",
-  "CSV export": "CSV export"
+  "CSV export": "CSV export",
+  "Created at": "Created at"
 }
