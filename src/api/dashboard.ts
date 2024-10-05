@@ -6,7 +6,12 @@ type DashboardDataType = {
   productCount: number
   categoryCount: number
   totalPrice: string
-  monthlySales: Array<number>
+  monthlySales: Array<DashboardSaleType>
+}
+
+export type DashboardSaleType = {
+  month: number
+  totalPrice: number
 }
 
 type DashboardResponseType = ApiAxiosResponse<DashboardDataType>
