@@ -15,3 +15,18 @@ export type AddSaleResponseType = ApiAxiosResponse<{
 }>
 
 export const addSale = (saleData: AddSaleFormType) => backendApi.post<AddSaleResponseType>("sales", saleData)
+
+export const exportSalesToCsv = () => backendApi.get("sales/export",  {
+  responseType: "blob"
+}).then(res => {
+  const url = window.URL.createObjectURL(new Blob([res.data]))
+      
+  const link = document.createElement('a')
+  link.href = url
+  link.setAttribute('download', 'sales_export.csv')
+  
+  document.body.appendChild(link)
+  link.click()
+  
+  document.body.removeChild(link);
+})

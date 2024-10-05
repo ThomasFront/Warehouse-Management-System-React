@@ -1,15 +1,17 @@
 import { useEffect, useState } from 'react';
 import { GridFilterModel, GridSortModel, DataGrid as MuiDataGrid } from '@mui/x-data-grid';
-import { Box } from '@mui/material';
-import { DataGridType } from './types';
-import { useQuery } from '@tanstack/react-query';
-import { toast } from 'react-toastify';
 import { useTranslation } from 'react-i18next';
+import { Box } from '@mui/material';
+import { LoadingButton } from '@mui/lab';
+import { toast } from 'react-toastify';
+import { useQuery } from '@tanstack/react-query';
+import DownloadIcon from '@mui/icons-material/Download';
+import { DataGridType } from './types';
 import { getDataGrid } from '../../api/dataGrid';
 import { ApiCollectionResponse } from '../../types/axios';
 import "./styles.css"
 
-export const DataGrid = <T,>({ endpoint, ...props }: DataGridType) => {
+export const DataGrid = <T,>({ endpoint, csvExport, ...props }: DataGridType) => {
   const { t } = useTranslation()
   const [page, setPage] = useState(0)
   const [pageSize, setPageSize] = useState(25)
@@ -36,6 +38,23 @@ export const DataGrid = <T,>({ endpoint, ...props }: DataGridType) => {
         height: "631px"
       }}
     >
+      {csvExport && (
+        <Box
+          display="flex"
+          justifyContent="end"
+        >
+          <LoadingButton
+            startIcon={<DownloadIcon />}
+            loading={csvExport.isLoading}
+            onClick={csvExport.action}
+            sx={{
+              width: "200px"
+            }}
+          >
+            {t("CSV Export")}
+          </LoadingButton>
+        </Box>
+      )}
       <MuiDataGrid
         rows={data?.data || []}
         loading={isLoading || isRefetching}

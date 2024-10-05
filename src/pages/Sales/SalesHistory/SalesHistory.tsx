@@ -3,9 +3,11 @@ import { useTranslation } from "react-i18next"
 import { PageInfo } from "../../../components/PageInfo"
 import { DataGrid } from "../../../components/DataGrid"
 import { saleColumns } from "./columns"
+import { useSale } from "../../../hooks/useSale"
 
 export const SalesHistory = () => {
   const { t } = useTranslation()
+  const { exportToCsv, isExportToCsvLoading } = useSale()
 
   const saleColumnsWithActions = [
     ...saleColumns(t)
@@ -20,6 +22,10 @@ export const SalesHistory = () => {
       <DataGrid
         endpoint="sales"
         columns={saleColumnsWithActions}
+        csvExport={{
+          action: exportToCsv,
+          isLoading: isExportToCsvLoading
+        }}
       />
     </Box>
   )
