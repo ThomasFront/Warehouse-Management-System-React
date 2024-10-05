@@ -1,6 +1,6 @@
 export type DashboardDataItemType = {
   title: string
-  count?: number
+  count?: number | string
   icon: JSX.Element
   color: string
   navigateTo: string

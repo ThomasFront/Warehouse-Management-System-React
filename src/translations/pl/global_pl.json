@@ -168,5 +168,21 @@
   "The sale has been added": "Sprzedaż została dodana",
   "Failed to add sale": "Dodawanie sprzedaży nie powiodło się",
   "Total price": "Cena całkowita",
-  "Sales price": "Cena sprzedaży"
+  "Sales price": "Cena sprzedaży",
+  "January": "Styczeń",
+  "February": "Luty",
+  "March": "Marzec",
+  "April": "Kwiecień",
+  "May": "Maj",
+  "June": "Czerwiec",
+  "July": "Lipiec",
+  "August": "Sierpień",
+  "September": "Wrzesień",
+  "October": "Październik",
+  "November": "Listopad",
+  "December": "Grudzień",
+  "Sale": "Sprzedaż",
+  "Monthly sales": "Sprzedaż w miesiącu",
+  "Total sales": "Całkowita sprzedaż",
+  "Sales in the year": "Sprzedaż w roku"
 }

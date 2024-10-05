@@ -168,5 +168,21 @@
   "The sale has been added": "The sale has been added",
   "Failed to add sale": "Failed to add sale",
   "Total price": "Total price",
-  "Sales price": "Sales price"
+  "Sales price": "Sales price",
+  "January": "January",
+  "February": "February",
+  "March": "March",
+  "April": "April",
+  "May": "May",
+  "June": "June",
+  "July": "July",
+  "August": "August",
+  "September": "September",
+  "October": "October",
+  "November": "November",
+  "December": "December",
+  "Sale": "Sale",
+  "Monthly sales": "Monthly sales",
+  "Total sales": "Total sales",
+  "Sales in the year": "Sales in the year"
 }

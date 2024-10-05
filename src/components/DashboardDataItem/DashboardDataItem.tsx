@@ -6,6 +6,7 @@ import { AnimationWrapper } from '../AnimationWrapper'
 
 export const DashboardDataItem = ({ title, icon, count, color, navigateTo, isLoading }: DashboardDataItemType) => {
   const { t } = useTranslation()
+  const showCurrency = title === "Total sales"
 
   return (
     <Link to={navigateTo}>
@@ -24,17 +25,17 @@ export const DashboardDataItem = ({ title, icon, count, color, navigateTo, isLoa
           transition: "transform 0.2s",
           borderBottom: "4px solid rgba(0, 0, 0, 0.2)",
           "&:hover": {
-            transform: "scale(1.02)"
+            transform: "scale(1.004)"
           }
         }}
       >
         <Box>
           <Typography
             color="#fff"
-            fontSize={48}
+            fontSize={36}
             fontWeight="bold"
           >
-            {isLoading ? 0 : count}
+            {isLoading ? 0 : count}{showCurrency && <span style={{ fontSize: 16 }} >PLN</span>}
           </Typography>
           <Typography
             color="#fff"
