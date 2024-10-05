@@ -48,10 +48,10 @@ export const DataGrid = <T,>({ endpoint, csvExport, ...props }: DataGridType) =>
             loading={csvExport.isLoading}
             onClick={csvExport.action}
             sx={{
-              width: "200px"
+              width: 220
             }}
           >
-            {t("CSV Export")}
+            {t("CSV export")}
           </LoadingButton>
         </Box>
       )}
