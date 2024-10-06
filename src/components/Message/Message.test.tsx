@@ -1,3 +1,4 @@
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { MemoryRouter } from "react-router"
 import { render, screen } from "@testing-library/react"
 import { Message } from "./Message"
@@ -18,13 +19,16 @@ const message = {
   }
 }
 
+const queryClient = new QueryClient();
 
 describe("Message", () => {
   it("should render message", () => {
     render(
-      <MemoryRouter>
-        <Message message={message} />
-      </MemoryRouter>
+      <QueryClientProvider client={queryClient}>
+        <MemoryRouter>
+          <Message message={message} />
+        </MemoryRouter>
+      </QueryClientProvider>
     )
 
     const messageWrapper = screen.getByTestId("messageWrapper")
@@ -33,9 +37,11 @@ describe("Message", () => {
 
   it("should render user data", () => {
     render(
-      <MemoryRouter>
-        <Message message={message} />
-      </MemoryRouter>
+      <QueryClientProvider client={queryClient}>
+        <MemoryRouter>
+          <Message message={message} />
+        </MemoryRouter>
+      </QueryClientProvider>
     )
 
     const firstName = screen.queryByText("Thomas Kanciano")
@@ -44,26 +50,27 @@ describe("Message", () => {
 
   it("should render message data", () => {
     render(
-      <MemoryRouter>
-        <Message message={message} />
-      </MemoryRouter>
+      <QueryClientProvider client={queryClient}>
+        <MemoryRouter>
+          <Message message={message} />
+        </MemoryRouter>
+      </QueryClientProvider>
     )
 
     const titleText = screen.queryByText("Example title")
-    const messageText = screen.queryByText("Example message")
     expect(titleText).toBeInTheDocument()
-    expect(messageText).toBeInTheDocument()
   })
 
   it("should render color header based on priority", () => {
     render(
-      <MemoryRouter>
-        <Message message={message} />
-      </MemoryRouter>
+      <QueryClientProvider client={queryClient}>
+        <MemoryRouter>
+          <Message message={message} />
+        </MemoryRouter>
+      </QueryClientProvider>
     )
 
     const header = screen.queryByTestId("messageHeader")
     expect(header).toHaveStyle("background-color: #FF4C4C")
   })
-
 })

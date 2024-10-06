@@ -25,6 +25,7 @@ export const TopProducts = ({ topProducts }: TopProductsProps) => {
         data: yAxisData || [],
         scaleType: 'band'
       }]}
+      data-testid="topProductsChart"
     />
   )
 }

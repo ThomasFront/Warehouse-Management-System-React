@@ -32,6 +32,7 @@ export const MonthlySales = ({ monthlySales }: MonthlySalesProps) => {
         data: chartMonths(t),
         scaleType: 'band'
       }]}
+      data-testid="monthlySalesChart"
     />
   )
 }

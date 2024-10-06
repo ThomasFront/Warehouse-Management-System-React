@@ -4,7 +4,12 @@ import { EmojiPanelType } from "./types"
 
 export const EmojiPanel = ({ marginTop, ...props }: EmojiPanelType) => {
   return (
-    <Box display="flex" justifyContent="end" mt={marginTop}>
+    <Box
+      display="flex"
+      justifyContent="end"
+      mt={marginTop}
+      data-testid="emojiPanel"
+    >
       <EmojiPicker
         {...props}
         reactionsDefaultOpen={true}
