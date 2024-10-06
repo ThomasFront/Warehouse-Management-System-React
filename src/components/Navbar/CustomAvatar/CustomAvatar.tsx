@@ -58,7 +58,7 @@ export const CustomAvatar = ({ userId, userAvatar, userInitials }: CustomAvatarT
             gap: 1
           }}
         >
-          <Avatar sx={{ width: 24, height: 24 }} src={userAvatarUrl}>{userInitials}</Avatar>
+          <Avatar sx={{ width: 24, height: 24, fontSize: 12 }} src={userAvatarUrl}>{userInitials}</Avatar>
           <Typography textAlign="center">{t("My profile")}</Typography>
         </MenuItem>
         <Divider />
