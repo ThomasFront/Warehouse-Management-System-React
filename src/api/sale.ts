@@ -20,10 +20,12 @@ export const exportSalesToCsv = () => backendApi.get("sales/export",  {
   responseType: "blob"
 }).then(res => {
   const url = window.URL.createObjectURL(new Blob([res.data]))
+  const localStorageLanguage = localStorage.getItem("lang")
+  const fileName = localStorageLanguage === "en" ? "sales_export.csv" : "eksport_sprzedazy.csv"
       
   const link = document.createElement('a')
   link.href = url
-  link.setAttribute('download', 'sales_export.csv')
+  link.setAttribute('download', fileName)
   
   document.body.appendChild(link)
   link.click()

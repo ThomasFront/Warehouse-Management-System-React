@@ -188,5 +188,7 @@
   "Exported sales histories to CSV": "Exported sales histories to CSV file",
   "Export of sales history to CSV file failed": "Export of sales history to CSV file failed",
   "CSV export": "CSV export",
-  "Created at": "Created at"
+  "Created at": "Created at",
+  "Exported product list to CSV": "Exported product list to CSV",
+  "Export of product list to CSV file failed": "Export of product list to CSV file failed"
 }

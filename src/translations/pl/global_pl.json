@@ -188,5 +188,7 @@
   "Exported sales histories to CSV": "Wyeksportowano historię sprzedaży do pliku CSV",
   "Export of sales history to CSV file failed": "Eksport historii sprzedaży do pliku CSV nie powiódł się",
   "CSV export": "Wyeksportuj do CSV",
-  "Created at": "Data utworzenia"
+  "Created at": "Data utworzenia",
+  "Exported product list to CSV": "Wyeksportowano listę produktów do pliku CSV",
+  "Export of product list to CSV file failed": "Eksport listy produktów do pliku CSV nie powiódł się"
 }

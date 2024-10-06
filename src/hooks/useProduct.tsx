@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { toast } from "react-toastify";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { addProduct, CreateProductRequestType, destroyProduct, editMessage, getProductById } from "../api/product";
+import { addProduct, CreateProductRequestType, destroyProduct, editMessage, exportProductsToCsv, getProductById } from "../api/product";
 import { ApiAxiosErrorResponse } from "../types/axios";
 import { showApiErrorMessage } from "../utils/error";
 import { EditProductPayloadType } from "../components/Modals/Product/EditProductModal/types";
@@ -38,6 +38,14 @@ export const useProduct = (productId?: number) => {
     onError: (err: ApiAxiosErrorResponse) => showApiErrorMessage(err, t, "Failed to edit product")
   });
 
+  const { mutate: exportToCsv, isPending: isExportToCsvLoading } = useMutation({
+    mutationFn: () => exportProductsToCsv(),
+    onSuccess: () => {
+      toast.success(t("Exported product list to CSV"))
+    },
+    onError: (err: ApiAxiosErrorResponse) => showApiErrorMessage(err, t, "Export of products history to CSV file failed")
+  });
+
   const { data: product, isLoading: isProductLoading, isError: isProductError } = useQuery({
     queryKey: ["product", productId],
     queryFn: () => getProductById(productId),
@@ -59,5 +67,7 @@ export const useProduct = (productId?: number) => {
     isUpdateProductLoading,
     product,
     isProductLoading,
+    exportToCsv,
+    isExportToCsvLoading
   }
 }

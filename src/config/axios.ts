@@ -7,10 +7,14 @@ export const backendApi = axios.create({
 backendApi.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem('token');
+    const lang = localStorage.getItem('lang')
 
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }
+
+    config.headers['Accept-Language'] = lang || 'pl'
+
     return config;
   },
   (error) => {

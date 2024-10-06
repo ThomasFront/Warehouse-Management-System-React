@@ -11,12 +11,14 @@ import { Nullable } from "../../../types/common"
 import { ProductType } from "../../../api/product"
 import { DeleteProductModal } from "../../../components/Modals/Product/DeleteProductModal"
 import { EditProductModal } from "../../../components/Modals/Product/EditProductModal"
+import { useProduct } from "../../../hooks/useProduct"
 
 export const ProductList = () => {
   const { t } = useTranslation()
   const [showDeleteModal, setShowDeleteModal] = useState(false)
   const [showEditModal, setShowEditModal] = useState(false)
   const [selectedProductData, setSelectedProductData] = useState<Nullable<ProductType>>(null)
+  const { exportToCsv, isExportToCsvLoading } = useProduct()
 
   const productColumnsWithActions = [
     ...productColumns(t),
@@ -66,6 +68,10 @@ export const ProductList = () => {
         <DataGrid
           endpoint="products"
           columns={productColumnsWithActions}
+          csvExport={{
+            action: exportToCsv,
+            isLoading: isExportToCsvLoading
+          }}
         />
       </Box>
       <EditProductModal

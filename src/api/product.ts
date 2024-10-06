@@ -38,3 +38,20 @@ export const destroyProduct = (id: number) => backendApi.delete<ApiAxiosWithMess
 export const editMessage = ({id, ...props}: EditProductPayloadType) => backendApi.patch<CreateProductResponseType>(`products/${id}`, props)
 
 export const getProductById = (productId?: number) => backendApi.get<ProductResponseType>(`products/${productId}`).then(({data}) => data.data.product)
+
+export const exportProductsToCsv = () => backendApi.get("products/export",  {
+  responseType: "blob"
+}).then(res => {
+  const url = window.URL.createObjectURL(new Blob([res.data]))
+  const localStorageLanguage = localStorage.getItem("lang")
+  const fileName = localStorageLanguage === "en" ? "products_export.csv" : "eksport_produktow.csv"
+      
+  const link = document.createElement('a')
+  link.href = url
+  link.setAttribute('download', fileName)
+  
+  document.body.appendChild(link)
+  link.click()
+  
+  document.body.removeChild(link);
+})
