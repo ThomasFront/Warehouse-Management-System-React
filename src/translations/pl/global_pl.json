@@ -190,5 +190,6 @@
   "CSV export": "Wyeksportuj do CSV",
   "Created at": "Data utworzenia",
   "Exported product list to CSV": "Wyeksportowano listę produktów do pliku CSV",
-  "Export of product list to CSV file failed": "Eksport listy produktów do pliku CSV nie powiódł się"
+  "Export of product list to CSV file failed": "Eksport listy produktów do pliku CSV nie powiódł się",
+  "Top products": "Najlepsze produkty"
 }

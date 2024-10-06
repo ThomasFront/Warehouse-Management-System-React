@@ -7,6 +7,12 @@ type DashboardDataType = {
   categoryCount: number
   totalPrice: string
   monthlySales: Array<DashboardSaleType>
+  topProducts: Array<TopProductType>
+}
+
+export type TopProductType = {
+  productName: string
+  quantity: number
 }
 
 export type DashboardSaleType = {

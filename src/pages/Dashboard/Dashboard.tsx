@@ -16,6 +16,7 @@ export const Dashboard = () => {
   const categoryCount = dashboardData?.categoryCount
   const totalPrice = dashboardData?.totalPrice
   const monthlySales = dashboardData?.monthlySales
+  const topProducts = dashboardData?.topProducts
 
   return (
     <Box>
@@ -67,6 +68,7 @@ export const Dashboard = () => {
       </Grid>
       <DashboardCharts
         monthlySales={monthlySales}
+        topProducts={topProducts}
       />
     </Box>
   )
