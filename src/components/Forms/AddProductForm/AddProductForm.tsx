@@ -12,10 +12,11 @@ import { TextFieldWithControl } from "../../TextFieldWithControl";
 import { SelectWithControl } from "../../SelectWithControl";
 import { FileUploader } from "../../FileUploader";
 import { Nullable } from "../../../types/common";
-import { transformAvatarStorageUrl } from "../../../utils/common";
+import { showImageAvatar } from "../../../utils/common";
 import { uploadImage } from "../../../api/user";
 import { DropdownVariant, useDropdownProvider } from "../../../hooks/useDropdownProvider";
 import { useProduct } from "../../../hooks/useProduct";
+import productDefaultImage from "../../../assets/images/productDefault.png"
 
 export const AddProductForm = () => {
   const { t } = useTranslation()
@@ -63,18 +64,16 @@ export const AddProductForm = () => {
         loading: isCreateProductsLoading
       }}
     >
-      {productImageUrl && (
-        <Box display="flex" justifyContent="center" mb={1}>
-          <Avatar
-            sx={{
-              height: 200,
-              width: 200,
-              border: `1px solid ${grayColor}`
-            }}
-            src={`${import.meta.env.VITE_BACKEND_LARAVEL}/${transformAvatarStorageUrl(productImageUrl)}`}
-          />
-        </Box>
-      )}
+      <Box display="flex" justifyContent="center" mb={1}>
+        <Avatar
+          sx={{
+            height: 125,
+            width: 125,
+            border: `1px solid ${grayColor}`
+          }}
+          src={productImageUrl ? showImageAvatar(productImageUrl) : productDefaultImage}
+        />
+      </Box>
       <FileUploader
         label="Upload product image"
         fileName={uploadedFileName}

@@ -10,7 +10,7 @@ import { AddSaleFormType } from "./types"
 import { SelectWithControl } from "../../SelectWithControl";
 import { DropdownVariant, useDropdownProvider } from "../../../hooks/useDropdownProvider";
 import { useProduct } from "../../../hooks/useProduct";
-import { transformAvatarStorageUrl } from "../../../utils/common";
+import { showImageAvatar } from "../../../utils/common";
 import productDefaultImage from "../../../assets/images/productDefault.png"
 import { TextFieldWithControl } from "../../TextFieldWithControl";
 import { ErrorMessage } from "../../ErrorMessage";
@@ -73,7 +73,7 @@ export const AddSaleForm = () => {
                   width: 50,
                   border: `1px solid ${grayColor}`
                 }}
-                src={product?.image ? `${import.meta.env.VITE_BACKEND_LARAVEL}/${transformAvatarStorageUrl(product.image)}` : productDefaultImage}
+                src={product?.image ? showImageAvatar(product.image) : productDefaultImage}
               />
               <Box>
                 <Typography>{t("Price")}: {product?.price} PLN</Typography>

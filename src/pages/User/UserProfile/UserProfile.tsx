@@ -14,10 +14,10 @@ export const UserProfile = () => {
   const { userId } = useParams()
   const theme = useTheme()
   const { user, isAdmin, isUserLoading, isUserError } = useUser(userId)
-  const { currentUser } = useCurrentUser()
+  const { currentUser, isAdmin: isCurrentUserAdmin } = useCurrentUser()
   const { t } = useTranslation()
   const [showEditUserProfileModal, setShowEditUserProfileModal] = useState(false)
-  const canEditUser = Number(currentUser?.id) === user?.id
+  const canEditUser = Number(currentUser?.id) === user?.id || isCurrentUserAdmin
   const grayColor = theme.palette.grey[300]
   const userAvatar = user?.avatar
   const userInitials = getUserInitials(user?.firstName, user?.lastName)

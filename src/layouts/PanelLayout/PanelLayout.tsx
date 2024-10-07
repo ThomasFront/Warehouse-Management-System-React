@@ -3,7 +3,7 @@ import { Navbar } from "../../components/Navbar"
 
 export const PanelLayout = () => {
   return (
-    <Box>
+    <Box mb={6}>
       <Navbar />
     </Box>
   )

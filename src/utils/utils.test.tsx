@@ -1,4 +1,4 @@
-import { capitalizeFirstLetter, formatDateTimeToDisplay, formatDateToDisplay, getUserInitials, handleMessagePriorityColor, removeEmptyStrings, transformAvatarStorageUrl } from "./common";
+import { capitalizeFirstLetter, formatDateTimeToDisplay, formatDateToDisplay, getUserInitials, handleMessagePriorityColor, removeEmptyStrings, showImageAvatar, transformAvatarStorageUrl } from "./common";
 
 describe("capitalizeFirstLetter", () => {
   it("should capitalize the first letter of a string", () => {
@@ -43,5 +43,11 @@ describe("handleMessagePriorityColor", () => {
 describe("formatDateTimeToDisplay", () => {
   it("should format date and time correctly", () => {
     expect(formatDateTimeToDisplay("2024-09-17T17:08:51.000000Z")).toBe("17-09-2024, 19:08")
-  });
-});
+  })
+
+  describe("showImageAvatar", () => {
+    it("should return correct image url", () => {
+      expect(showImageAvatar('http://example.com/public/avatar.png')).toBe(`${import.meta.env.VITE_BACKEND_LARAVEL}/http://example.com/storage/avatar.png`)
+    })
+  })
+})

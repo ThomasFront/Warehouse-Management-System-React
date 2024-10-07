@@ -1,7 +1,7 @@
 import { TFunction } from "i18next";
 import { Avatar } from "@mui/material";
 import { GridRenderCellParams } from "@mui/x-data-grid";
-import { transformAvatarStorageUrl } from "../../../utils/common";
+import { showImageAvatar } from "../../../utils/common";
 import productDefaultImage from "../../../assets/images/productDefault.png"
 
 export const productColumns = (t: TFunction) => ([
@@ -18,7 +18,7 @@ export const productColumns = (t: TFunction) => ([
     sortable: false,
     renderCell: ({ row }: GridRenderCellParams) => {
       const image = row.image
-      const productImage = image ? `${import.meta.env.VITE_BACKEND_LARAVEL}/${transformAvatarStorageUrl(image)}` : productDefaultImage
+      const productImage = image ? showImageAvatar(image) : productDefaultImage
 
       return <Avatar src={productImage} />
     }

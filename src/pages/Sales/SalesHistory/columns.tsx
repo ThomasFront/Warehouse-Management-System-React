@@ -1,6 +1,6 @@
 import { GridRenderCellParams } from "@mui/x-data-grid";
 import { TFunction } from "i18next";
-import { formatDateTimeToDisplay, transformAvatarStorageUrl } from "../../../utils/common";
+import { formatDateTimeToDisplay, showImageAvatar } from "../../../utils/common";
 import productDefaultImage from "../../../assets/images/productDefault.png"
 import { Avatar, Box } from "@mui/material";
 
@@ -18,7 +18,7 @@ export const saleColumns = (t: TFunction) => ([
     sortable: false,
     renderCell: ({ row }: GridRenderCellParams) => {
       const image = row.product.image
-      const productImage = image ? `${import.meta.env.VITE_BACKEND_LARAVEL}/${transformAvatarStorageUrl(image)}` : productDefaultImage
+      const productImage = image ? showImageAvatar(image) : productDefaultImage
 
       return (
         <Box display="flex" alignItems="center" gap={1}>

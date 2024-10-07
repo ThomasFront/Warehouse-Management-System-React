@@ -13,7 +13,7 @@ import { useUser } from "../../../../hooks/useUser";
 import { FileUploader } from "../../../FileUploader";
 import { Nullable } from "../../../../types/common";
 import { uploadImage } from "../../../../api/user";
-import { removeEmptyStrings, transformAvatarStorageUrl } from "../../../../utils/common";
+import { removeEmptyStrings, showImageAvatar } from "../../../../utils/common";
 
 export const EditUserProfileModal = ({ isOpen, onClose, user }: EditUserProfileModalType) => {
   const { t } = useTranslation()
@@ -89,11 +89,11 @@ export const EditUserProfileModal = ({ isOpen, onClose, user }: EditUserProfileM
           <Box display="flex" justifyContent="center">
             <Avatar
               sx={{
-                height: 100,
-                width: 100,
+                height: 125,
+                width: 125,
                 border: `1px solid ${grayColor}`
               }}
-              src={`${import.meta.env.VITE_BACKEND_LARAVEL}/${transformAvatarStorageUrl(avatarUrl)}`}
+              src={showImageAvatar(avatarUrl)}
             />
           </Box>
         )}

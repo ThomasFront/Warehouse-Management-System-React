@@ -4,4 +4,5 @@ export type CreateUserFormType = {
   email: string
   password: string
   role: string
+  avatarUrl?: string
 }

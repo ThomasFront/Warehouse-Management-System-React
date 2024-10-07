@@ -33,3 +33,5 @@ export const handleMessagePriorityColor = (priority: string) => {
       return "#4CAF50"
   }
 }
+
+export const showImageAvatar = (imageUrl: string) => `${import.meta.env.VITE_BACKEND_LARAVEL}/${transformAvatarStorageUrl(imageUrl)}`

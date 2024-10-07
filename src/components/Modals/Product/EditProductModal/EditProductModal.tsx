@@ -15,7 +15,7 @@ import { DropdownVariant, useDropdownProvider } from "../../../../hooks/useDropd
 import { useProduct } from "../../../../hooks/useProduct";
 import { Nullable } from "../../../../types/common";
 import { uploadImage } from "../../../../api/user";
-import { transformAvatarStorageUrl } from "../../../../utils/common";
+import { showImageAvatar } from "../../../../utils/common";
 import { FileUploader } from "../../../FileUploader";
 
 export const EditProductModal = ({ isOpen, onClose, product }: EditProductModalType) => {
@@ -95,11 +95,11 @@ export const EditProductModal = ({ isOpen, onClose, product }: EditProductModalT
         <Box display="flex" justifyContent="center" mb={1}>
           <Avatar
             sx={{
-              height: 200,
-              width: 200,
+              height: 125,
+              width: 125,
               border: `1px solid ${grayColor}`
             }}
-            src={`${import.meta.env.VITE_BACKEND_LARAVEL}/${transformAvatarStorageUrl(productImageUrl)}`}
+            src={showImageAvatar(productImageUrl)}
           />
         </Box>
       )}

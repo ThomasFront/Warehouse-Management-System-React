@@ -15,7 +15,7 @@ import { EditMessageModal } from "../Modals/Message/EditMessageModal";
 export const Message = ({ message }: MessageProps) => {
   const { t } = useTranslation()
   const navigate = useNavigate()
-  const { currentUser } = useCurrentUser()
+  const { currentUser, isAdmin: isCurrentUserAdmin } = useCurrentUser()
   const [showDeleteMessageModal, setShowDeleteMessageModal] = useState(false)
   const [showEditMessageModal, setShowEditMessageModal] = useState(false)
   const { title, message: messageText, createdAt, priority, user, id: messageId } = message
@@ -24,7 +24,7 @@ export const Message = ({ message }: MessageProps) => {
   const userInitials = getUserInitials(firstName, lastName)
   const userAvatarUrl = `${import.meta.env.VITE_BACKEND_LARAVEL}${avatar}`
   const dateTimeFormatToDisplay = formatDateTimeToDisplay(createdAt)
-  const canManageMessage = currentUser?.id === id
+  const canManageMessage = currentUser?.id === id || isCurrentUserAdmin
 
   return (
     <>
