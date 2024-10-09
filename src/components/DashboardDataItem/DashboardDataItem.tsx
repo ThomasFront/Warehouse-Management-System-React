@@ -1,10 +1,12 @@
+import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Box, Typography } from '@mui/material'
-import { DashboardDataItemType } from './types'
 import { Link } from 'react-router-dom'
+import { DashboardDataItemType } from './types'
 import { AnimationWrapper } from '../AnimationWrapper'
 
 export const DashboardDataItem = ({ title, icon, count, color, navigateTo, isLoading }: DashboardDataItemType) => {
+  const [expanded, setExpanded] = useState(false);
   const { t } = useTranslation()
   const showCurrency = title === "Total sales"
 
@@ -22,12 +24,10 @@ export const DashboardDataItem = ({ title, icon, count, color, navigateTo, isLoa
         bgcolor={color}
         sx={{
           cursor: "pointer",
-          transition: "transform 0.2s",
-          borderBottom: "4px solid rgba(0, 0, 0, 0.2)",
-          "&:hover": {
-            transform: "scale(1.004)"
-          }
+          borderBottom: "4px solid rgba(0, 0, 0, 0.2)"
         }}
+        onMouseEnter={() => setExpanded(true)}
+        onMouseLeave={() => setExpanded(false)}
       >
         <Box>
           <Typography
@@ -51,9 +51,12 @@ export const DashboardDataItem = ({ title, icon, count, color, navigateTo, isLoa
           position="absolute"
           bgcolor="rgba(255, 255, 255, 0.05)"
           left={-50}
-          width={200}
+          width={expanded ? "150%" : 200}
           height={200}
           borderRadius={50}
+          sx={{
+            transition: '0.5s',
+          }}
         />
       </Box>
     </Link>
