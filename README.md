@@ -29,7 +29,7 @@ Administrators have enhanced permissions, including:
 
 - **Frontend**: React
 - **Backend**: Laravel
-- **Database**: MySQ
+- **Database**: MySQL
 
 ## Screenshots
 
