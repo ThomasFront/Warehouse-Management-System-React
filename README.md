@@ -1,50 +1,40 @@
-# React + TypeScript + Vite
+# Warehouse Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Warehouse Management System** is a comprehensive application designed for managing warehouse operations, built using **React** for the frontend and **Laravel** for the backend. The application provides an intuitive user interface and is available in both Polish and English.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Dashboard**: Displays key information such as the number of users, products, categories, total sales, and includes useful charts related to sales and top products.
+  
+- **Products**: Allows users to view a list of products with options to export data to CSV, edit, delete, and add new products along with images.
+  
+- **Categories**: Provides management of product categories through options to edit, delete, and add new categories.
+  
+- **Sales**: Enables adding sales records for products and viewing a list of all transactions with the ability to export to CSV.
+  
+- **Profile**: Users can view their profile data and edit their profile picture and theme.
+  
+- **Messages**: Users can add messages with priority settings and edit or delete existing messages.
+  
+- **Users**: A list of all users is available, allowing everyone to view profiles, while administrators can add new users, edit, and delete other user accounts.
 
-## Expanding the ESLint configuration
+## Administrator Privileges
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Administrators have enhanced permissions, including:
+- Managing user accounts (adding, editing, and deleting users).
+- Editing and deleting messages.
+- Accessing advanced system features.
 
-- Configure the top-level `parserOptions` property like this:
+## Technologies Used
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- **Frontend**: React
+- **Backend**: Laravel
+- **Database**: MySQ
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Screenshots
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+...
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Installation
+
+...
