@@ -84,16 +84,16 @@ export const UserProfile = () => {
         <Box bgcolor="#fff" minHeight={175} px={2}>
           <Box pb={4}>
             <Grid container spacing={2} pt={12}>
-              <Grid item xs={12} sm={6} lg={3}>
+              <Grid item xs={12} md={6} xl={3}>
                 <FancyDataItem label={t("First name and last name")} value={`${user?.firstName} ${user?.lastName}`} colorTheme={user?.colorTheme} />
               </Grid>
-              <Grid item xs={12} sm={6} lg={3}>
+              <Grid item xs={12} md={6} xl={3}>
                 <FancyDataItem label={t("E-mail address")} value={user?.email} colorTheme={user?.colorTheme} />
               </Grid>
-              <Grid item xs={12} sm={6} lg={3}>
+              <Grid item xs={12} md={6} xl={3}>
                 <FancyDataItem label={t("Role")} value={t(capitalizeFirstLetter(user?.role as string))} colorTheme={user?.colorTheme} />
               </Grid>
-              <Grid item xs={12} sm={6} lg={3}>
+              <Grid item xs={12} md={6} xl={3}>
                 <FancyDataItem label={t("Account created")} value={dateToDisplay} colorTheme={user?.colorTheme} />
               </Grid>
             </Grid>
