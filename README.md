@@ -27,14 +27,15 @@ Administrators have enhanced permissions, including:
 
 ## Technologies Used
 
-- **Frontend**: React
+- **Frontend**: React, TypeScript, Material UI, React Hook Form, Yup, Date-fns, Framer Motion, Vitest, React Testing Library 
 - **Backend**: Laravel
 - **Database**: MySQL
+
+## Installation
+
+...
 
 ## Screenshots
 
 ...
 
-## Installation
-
-...
