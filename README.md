@@ -141,14 +141,14 @@ Administrators have enhanced permissions, including:
 
   Example login credentials:
 
+  For **ADMIN**:
   ```bash
-  For ADMIN:
   Email: thomas.admin@example.com
   Password: thomas
   ```
 
+  For **USER**:
   ```bash
-  For USER:
   Email: george.user@example.com
   Password: george
   ```
