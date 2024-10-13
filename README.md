@@ -33,9 +33,129 @@ Administrators have enhanced permissions, including:
 
 ## Installation
 
-...
+**Frontend:**
 
-## Screenshots
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/ThomasFront/Warehouse-Management-System-React.git
+   ```
 
-...
+2. Navigate to the directory:
+   ```bash
+   cd Warehouse-Management-System-React
+   ```
+
+3. Install frontend dependencies using **npm**:
+   ```bash
+   npm install
+   ```
+
+    or using **yarn**:
+    ```bash
+    yarn install
+    ```
+
+4. Create a **.env.local** file in the root directory with the following values::
+   ```bash
+   VITE_BACKEND_API_URL=http://127.0.0.1:8000/api/
+   VITE_BACKEND_LARAVEL=http://127.0.0.1:8000
+   ```
+
+5. Start the React development server using npm:
+   ```bash
+   npm run dev
+   ```
+
+    or using **yarn**:
+    ```bash
+    yarn dev
+    ```
+
+6. Open your browser and navigate to:
+   ```bash
+   http://localhost:5173/
+   ```
+
+
+
+**Backend:**
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/ThomasFront/Warehouse-Management-System-Laravel.git
+   ```
+
+2. Navigate to the directory:
+   ```bash
+   cd Warehouse-Management-System-Laravel
+   ```
+
+3. Install backend dependencies:
+   ```bash
+   composer install
+   ```
+
+4. Create the .env configuration file:
+   ```bash
+   cp .env.example .env
+   ```
+
+5. Set the appropriate database values in the **.env** file:
+   ```bash
+   DB_DATABASE=wms
+   DB_USERNAME=user
+   DB_PASSWORD=password
+   ```
+
+6. Generate an application key:
+   ```bash
+   php artisan key:generate
+   ```
+
+7. Generate the JWT secret:
+   ```bash
+   php artisan jwt:secret
+   ```
+
+8. Start the application using Docker:
+   ```bash
+   docker-compose up -d
+   ```
+
+9. Run the database migrations:
+   ```bash
+   php artisan migrate
+   ```
+
+10. Seed the database with initial data:
+   ```bash
+   php artisan db:seed
+   ```
+
+11. Start the development server:
+   ```bash
+   php artisan serve
+   ```
+
+12. Access the frontend at **http://localhost:5173/** and log in to your account:
+
+  Example login credentials:
+
+  ```bash
+  For ADMIN:
+  Email: thomas.admin@example.com
+  Password: thomas
+  ```
+
+  ```bash
+  For USER:
+  Email: george.user@example.com
+  Password: george
+  ```
+
+
+
+
+
+
 
