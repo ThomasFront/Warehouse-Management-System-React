@@ -27,7 +27,11 @@ export const LoginForm = () => {
   const subheadColor = theme.palette.grey[500]
 
   const { handleSubmit, formState: { errors }, control } = useForm<LoginFormType>({
-    resolver: yupResolver(loginFormSchema)
+    resolver: yupResolver(loginFormSchema),
+    defaultValues: {
+      email: "thomas.admin@example.com",
+      password: "thomas"
+    }
   })
 
   const onSubmit: SubmitHandler<LoginFormType> = data => login(data)
