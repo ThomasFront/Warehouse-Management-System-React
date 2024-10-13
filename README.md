@@ -31,7 +31,19 @@ Administrators have enhanced permissions, including:
 - **Backend**: Laravel
 - **Database**: MySQL
 
+## Some screenshots: 
+
 ## Installation
+
+![Login page](https://github.com/user-attachments/assets/4ecc6254-6c00-4fde-90c8-f4cc6c55efb3)
+![Dashboard page](https://github.com/user-attachments/assets/ec1d4b20-8f02-45b6-b63f-1f5888209324)
+![Products page](https://github.com/user-attachments/assets/a1ec9193-bcea-41a2-8ee8-97d2f1eef482)
+![Add product page](https://github.com/user-attachments/assets/0cd8d67a-5cd6-4bb7-9405-84d6f13421b3)
+![Sales history page](https://github.com/user-attachments/assets/0d2e6d37-b907-4901-ad9d-2677462911db)
+![Message list page](https://github.com/user-attachments/assets/9d1f10b9-0674-4e3e-a1a4-8f1b86772b43)
+![Edit user profile page](https://github.com/user-attachments/assets/31d8df89-019c-48ea-83cf-ec928c793f14)
+![User list page](https://github.com/user-attachments/assets/452b9c5b-1f21-4740-aa5b-f8c2a0c27695)
+
 
 **Frontend:**
 
