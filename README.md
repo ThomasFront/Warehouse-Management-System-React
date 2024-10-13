@@ -33,8 +33,6 @@ Administrators have enhanced permissions, including:
 
 ## Some screenshots: 
 
-## Installation
-
 ![Login page](https://github.com/user-attachments/assets/4ecc6254-6c00-4fde-90c8-f4cc6c55efb3)
 ![Dashboard page](https://github.com/user-attachments/assets/ec1d4b20-8f02-45b6-b63f-1f5888209324)
 ![Products page](https://github.com/user-attachments/assets/a1ec9193-bcea-41a2-8ee8-97d2f1eef482)
@@ -44,6 +42,8 @@ Administrators have enhanced permissions, including:
 ![Edit user profile page](https://github.com/user-attachments/assets/31d8df89-019c-48ea-83cf-ec928c793f14)
 ![User list page](https://github.com/user-attachments/assets/452b9c5b-1f21-4740-aa5b-f8c2a0c27695)
 
+
+## Installation
 
 **Frontend:**
 
